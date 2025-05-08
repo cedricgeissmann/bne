@@ -264,3 +264,11 @@ section ol {
     display: block;
   }
 }
+
+#line3 {
+  transition: transform 0.3s ease;
+  transform-origin: 140.45682px 74.543182px;
+}
+#line3:hover {
+  transform: rotate(-26.57deg);
+}

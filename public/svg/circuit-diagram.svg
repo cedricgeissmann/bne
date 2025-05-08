@@ -1,49 +1,4 @@
-import Chapter from "../../components/Chapter"
-import Example from "../../components/Example"
-import Img from "../../components/Img"
-import Audio from "../../components/Audio"
-import URLComponent from "../../components/URL"
-import { Answer, Answers, Question, Quiz } from "../../components/Quiz"
-import Presentation, {
-  Slide,
-  Basement,
-  Fragment,
-} from "../../components/Reveal"
-
-<Chapter>
-
-<Presentation>
-  <Slide>
-    <h2>Smart Home</h2>
-  </Slide>
-</Presentation>
-
-<h2 id="networks">Automatisiertes Eigenheim</h2>
-
-Wie oft sind Sie zu Hause bereits in Bett und haben sich in der Decke
-eingekuschelt und merken dann dass der Lichtschalter einmal queer durchs kalte
-Zimmer ist? Oder Sie müssen im Stress das Haus verlassen, und wissen nicht mehr
-ob Sie alle Lichter geschlöscht haben? Oder Sie sind auf dem Heimweg und möchten
-direkt einen warmen Kaffee oder Tee trinken? Das alles können Sie über die
-Heimautomatisierung erreichen. Und wenn alles super läuft, können Sie dabei
-sogar Energie sparen. Aber wie funktioniert das ganze?
-
-import SVGImg from "../../components/SVGImg"
-
-<Example id="light" title="Wie funktioniert eine Lampe?">
-
-Eine Lampe hat immer ein Leuchtmittel (Glühbirne). Das Leuchtmittel wandelt
-elektrische Energie in Licht um. Es wird also heller, dafür nimmt die
-elektrische Energie jedoch ab.
-
-Damit das funktionieren kann, muss elektrische Energie zum Leuchtmittel geleitet
-werden, also ein Stromkreislauf muss geschlossen sein. Das öffnen und schliessen
-von einem Stromkreislauf, kann man mit einem herkömlichen Lichtschalter
-erreichen.
-
-<SVGImg
-  alt="Stromkreislauf Diagramm mit Glühbirne und Lichtschalter"
-  svgContent={`<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    width="350"
    height="150"
@@ -226,9 +181,4 @@ erreichen.
      cx="319.21112"
      cy="74.88649"
      r="5.2588444" />
-</svg>`}
-/>
-
-</Example>
-
-</Chapter>
+</svg>
