@@ -244,7 +244,7 @@ const router = createBrowserRouter(
     },
   ],
   {
-    basename: "/gym-inf",
+    basename: "/bne",
   },
 )
 
