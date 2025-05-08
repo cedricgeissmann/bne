@@ -1,0 +1,77 @@
+import Chapter from "../../components/Chapter"
+import FiddleSVG from "../../components/FiddleSVG"
+import Example from "../../components/Example"
+
+<Chapter>
+
+## Animationen
+
+<section>
+
+Im modernen Web ist fast alles in irgend einer Art animiert, und das möchten wir
+hier auch erreichen. Animationen mit `SVG` können sehr komplex werden, man kann
+damit aber auch sehr tolle Dinge darstellen. Wir beschäftigen uns leider nur mit
+den Basics. DAmit können aber auch bereits sehr komplexe Animationen erstellt
+werden.
+
+Generell gibt es 2 Arten von Animationen die Sie in `SVG` unterscheiden müssen.
+
+- Verformung
+- Bewegung
+
+Mit diesen beiden Typen können Sie bereits sehr komplexe Animationen erstellen.
+
+</section>
+
+<Example title="Ellipse zerquetschen">
+
+Wir können eine Ellipse definieren, und den Wert der vertikalen Achse
+kontinuierlich verändern, damit erreichen wir den Effekt von einer Quetschung
+eines Kreises.
+
+<FiddleSVG
+  svg={`<svg height="300" width="300">
+    <ellipse cx="150" cy="150" rx="50" ry="50" fill="green">
+      <animate attributeName="ry" values="50;25;50" dur="1s" repeatCount="indefinite"/>
+    </ellipse>
+</svg>`}
+/>
+
+### Aufgabe: Emoji
+
+Erstellen Sie ein Emoji, das Sie mit einem Auge anblinzelt.
+
+</Example>
+
+## Elemente bewegen
+
+<section>
+
+Die zweite Art der Animation ist ein Element zu bewegen. Dafür definiert man
+oftmals einen Pfad, und das Objekt bewegt sich dann entlang von dem Pfad.
+
+</section>
+
+<Example title="Im Kreis drehen">
+
+Wir lassen einen Kreis einer Linie entlang gehen.
+
+<FiddleSVG
+  svg={`<svg height="300" width="300" version="1.1">
+    <path id="circle-motion" d="M 50 150 L 250 150 Z" stroke="black" />
+    <circle r="40" fill="red">
+      <animateMotion dur="5s" repeatCount="indefinite">
+        <mpath xlink:href="#circle-motion"/>
+      </animateMotion>
+    </circle>
+</svg>`}
+/>
+
+### Aufgabe: Komplexere Pfade
+
+Erstellen Sie weitere Objekte die sich an anderen Pfaden entlang bewegen. Diese
+Pfade sollen komplexer sein wie die gerade Linie.
+
+</Example>
+
+</Chapter>

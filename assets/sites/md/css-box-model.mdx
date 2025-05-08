@@ -1,0 +1,72 @@
+import Chapter from "../../components/Chapter"
+import Example from "../../components/Example"
+
+<Chapter>
+
+## CSS Box Modell
+
+<section>
+
+Das Box Modell in CSS beschreibt wie die Elemente Platz auf einer Webseite
+einnehmen. Alle Elemente in sind in 4 Bereiche eingeteilt.
+
+- `margin`: Der äussere Rand, also der Abstand zu anderen Elemente
+- `border`: Der Rand von einem Element. Dieser ist normalerweise nicht sichtbar,
+  kann aber verwendet werden um Elemente zu umranden.
+- `padding`: Der innere Rand, also der Abstand vom Inhalt zur `border
+- `content`: Der Inhalt des Elements. Dies wird normalerweise in `width` und
+  `height` angegeben.
+
+Damit das Box Modell möglichst einfach angewendet werden kann, sollten Sie immer
+die folgende CSS-Regel einfügen.
+
+```css
+* {
+  box-sizing: border-box;
+}
+```
+
+</section>
+
+<Example title="Aufgabe: Spielen mit dem Box-Modell">
+  Erstellen Sie ein Element mit der ID `box`. Spielen Sie dann mit dem folgenden
+  CSS Code herum, bis Sie verstehen was die einzelnen Teile machen.
+
+```css
+#box {
+  background-color: cyan;
+  border: 2px solid black;
+  margin: 50px;
+  padding: 10px;
+  width: 300px;
+  height: 70px;
+}
+```
+
+</Example>
+
+### Spezifische Ränder
+
+Sie können die Randteile auch direkt ansprechen und müssen nicht für alle die
+gleichen Abstände verwenden.
+
+<Example title="Aufgabe: Farbiger Rand auf der linken Seite">
+
+Mit `border-left` können Sie nur den linken Rand ansprechen. Erstellen Sie eine
+Klasse `danger` die auf der linken Seite einen roten Rand von 5 Pixeln hat.
+
+</Example>
+
+<section>
+
+Die einzelnen Teile des `margin`s können Sie wie folgt ansprechen, die anderen
+sind analog dazu.
+
+- `margin-left`
+- `margin-right`
+- `margin-top`
+- `margin-bottom`
+
+</section>
+
+</Chapter>

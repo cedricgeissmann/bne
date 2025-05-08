@@ -1,0 +1,81 @@
+import Chapter from "../../components/Chapter"
+import Example from "../../components/Example"
+
+<Chapter>
+
+## Webseiten strukturieren
+
+Webseiten sind immer in logische Abschnitte unterteilt. Mit HTML findet diese
+Unterteilung mit verschiedenen Tags statt. Welche Tags man wie fest einsetzen
+möchte, liegt dabei beim Benutzer. Sinnvoll ist es sich eine einfache Struktur
+zu überlegen, und diese so gut es geht beizubehalten.
+
+<Example title="Beispiel: Artikel mit Abschnitt">
+
+Ein Artikel hat in der Regel einen Titel und besteht aus verschiedenen
+Abschnitten. Dies kann mit HTML einfach dargestellt werden.
+
+```html
+<article>
+  <h2>Titel</h2>
+
+  <section>Dies ist der erste Abschnitt.</section>
+  <section>
+    <p>Der zweite Abschnitt hat mehrere Unterabschnitte.</p>
+    <p>Dies ist der zweite Unterabschnitt.</p>
+  </section>
+</article>
+```
+
+Die logische Struktur kann hier einfach vom Programmierer und auch vom Computer
+ausgelesen werden. Durch diese Art der Struktur, können später dann verschiedene
+Stiele auf die Webseite angewendet werden, was eine schöne und einheitliche
+Gestaltung ermöglicht, ohne darüber nachdenken zu müssen.
+
+</Example>
+
+## Textelemente hervorheben
+
+Wenn wir eine Webseite erstellen, möchten wir nicht nur die Seite strukturieren,
+sondern auch einzelne Elemente hervorheben können. Soll ein bestimmtes Wort im
+Text hervorgehoben werden, kann man dies entweder durch <b>Fettdruck</b> oder
+
+<i>Kursiv</i> erreichen. Es gibt auch noch andere Möglichkeiten Text hervorzuheben.
+
+<Example title="Aufgabe: Bauen Sie die folgenden Elemente in Ihre Webseite ein.">
+
+- `<b>`
+- `<i>`
+- `<strong>`
+- `<mark>`
+- `<em>`
+- `<sub>`
+- `<sup>`
+
+Wenn Sie noch mehr Elemente brauchen, oder mehr zu den einzelnen Elementen
+wissen möchten, finden sie
+
+<a href="https://www.w3schools.com/html/html_formatting.asp">hier</a>{" "}
+weitere Informationen.
+</Example>
+
+## Block- und Inline-Elemente
+
+HTML hat im Prinzip 2 unterschiedliche Elementarten. Einmal gibt es das
+Blockelement (`<h1>`, `<section>`, `<div>`, ...) und es gibt die Inlineelemente
+(`<b>`, `<strong>`,{" "} `<a>`, `<img>`, ...). Mit diesen beiden Arten kann man
+das ganze Design einer Webseite beschreiben. Dafür gibt es eine ganz einfache
+Regel. Ein Blockelement nimmt immer die volle Breite der Webseite ein, und
+danach kommt ein Umbruch. Ein Inlineelment hingegen, nimmt nur so viel Platz wie
+es braucht, und danach geht der Text direkt weiter.
+
+<Example title="Aufgabe: Spielen mit Block- und Inline-Elementen">
+
+- Was passiert wenn Sie ein Blockelement in ein Inlineelement packen?
+- Von Typ ist `<img>`?
+- Wie können Sie ein Bild zentriert anzeigen, ohne Text daneben? (Tipp:
+  `<center>`)
+
+</Example>
+
+</Chapter>

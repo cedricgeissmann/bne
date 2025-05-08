@@ -1,0 +1,79 @@
+import Chapter from "../../components/Chapter"
+import Code from "../../components/Code"
+
+<Chapter>
+
+## Webseiten
+
+Eine Webseite ist ein Dokument das von Ihrem Webbrowser dargestellt wird. Die
+Strukturierung des Dokuments wird mit **HTML** gemacht. Dies ist eine einfache
+Art dem Computer zu sagen welche Teile zusammen gehören, und von welchem Typ
+diese Teile sind.
+
+### Titel
+
+<section>
+
+Möchten wir einen Text als **Titel** festlegen, machen wir das in
+
+**HTML** mit der folgenden Syntax:
+
+```html
+<h1>Titel</h1>
+```
+
+Mit `<h1>` sagen Sie dem Computer dass nun ein Titel folgt. Dann wird all der
+Text bis `</h1>` als Titel interpretiert.
+
+Neben `<h1>` gibt es auch kleinere Titel `<h2>`, `<h3>`, ..., `<h6>`. Versuchen
+Sie auch diese in Ihr Dokument zu integrieren.
+
+Neben dem Titel, gibt es noch viele andere **Tags**. Einige wichtige werden hier
+besprochen, eine ausführlichere Liste kann auf
+
+<a href="https://www.w3schools.com/html/default.asp">w3schools</a> gefunden werden.
+
+</section>
+
+### Abschnitt
+
+Um in **HTML** einen Abschnitt zu machen, brauchen Sie das `<p>`-Tag. Alles was
+darin ist, wird als Abschnitt betrachtet. **HTML** ignoriert Zeilenumbrüche und
+mehrfache Leerzeichen um Dokumente konsistent anzuzeigen. Damit Sie Abschnitte
+verwenden können, brauchen Sie also `<p>`.
+
+### Listen
+
+<section>
+
+In **HTML** gibt es zwei Arten von Listen. Ungeordnete Listen `<ul>` und
+geordnete Listen `<ol>`. Innerhalb einer Liste ist jedes Element ein
+Listeneintrag. Der folgende Code erstellt Ihnen eine Liste.
+
+```html
+<ul>
+  <li>Eintrag eins</li>
+  <li>Eintrag zwei</li>
+</ul>
+```
+
+Versuchen Sie neue Einträge hinzuzufügen, und ändern Sie die Liste in eine
+geordnete Liste.
+
+</section>
+
+### Bilder
+
+<section>
+
+Bilder können sie mit dem `<img>`-Tag einfügen. Dazu ein einfaches Beispiel.
+
+```html
+<img
+  src="https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80"
+  width="500px" />
+```
+
+</section>
+
+</Chapter>

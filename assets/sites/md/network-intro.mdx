@@ -1,0 +1,497 @@
+import Chapter from "../../components/Chapter"
+import Example from "../../components/Example"
+import Img from "../../components/Img"
+import Audio from "../../components/Audio"
+import URLComponent from "../../components/URL"
+import { Answer, Answers, Question, Quiz } from "../../components/Quiz"
+import Presentation, {
+  Slide,
+  Basement,
+  Fragment,
+} from "../../components/Reveal"
+
+<Chapter>
+
+<h2 id="networks">Netzwerke</h2>
+
+<Presentation>
+      <Slide>
+        <h2 id="networks">Netzwerke</h2>
+        <ul>
+          <li>Datenaustausch zwischen Geräten.</li>
+          <li>Beispiel: Webseite besuchen.</li>
+        </ul>
+      </Slide>
+      <Slide>
+        <h2>Server-Client Modell</h2>
+          <Basement>
+<div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
+  <img src="./svg/server-client-diagram.svg" alt="Network Diagram" width="100%" />
+</div>
+          </Basement>
+          <Basement>
+            Beim <strong>Server-Client</strong>-Modell sind immer 2 Parteien
+            involviert.
+          </Basement>
+          <Basement>
+            Der <strong>Client</strong> ist die Anwendung, die eine Anfrage
+            stellt.
+          </Basement>
+          <Basement>
+            Der <strong>Server</strong> ist die Anwendung, die die Antwort zur
+            Verfügung stellt.
+          </Basement>
+          <Basement>
+            Das kann auf dem gleichen Gerät passieren, oder wie meistens über
+            das Internet.
+          </Basement>
+          <Basement>
+            Damit diese Anwendungen miteinander kommunizieren können, braucht es
+            ein Protokoll.
+          </Basement>
+          <Basement>
+            Beim Abrufen von Webseiten wird dabei <strong>HTTP</strong> verwendet.
+          </Basement>
+          <Basement>
+            Dabei steht <strong>HTTP</strong> für{" "}
+            <strong>Hypertext Transfer Protocol</strong>.
+          </Basement>
+          <Basement>
+            Wenn die Verbindung verschlüsselt sein soll, dann ist es{" "}
+            <strong>HTTPS</strong>.
+          </Basement>
+      </Slide>
+      <Slide>
+        <h2 id="url-presentation">Webadressen</h2>
+        <Basement>
+          Um auf eine Webseite zugreifen zu können, brauchen wir einen Link bzw.
+          eine Webadresse. Der korrekte Begriff dafür ist <strong>URL</strong>{" "}
+          (Uniform Resource Locator). Eine <strong>URL</strong> ist nach dem
+          folgenden Schema aufgebaut:
+        <URLComponent url="https://www.gym-muttenz.ch/index.php" />
+        </Basement>
+      </Slide>
+      <Slide>
+        <h2>URL</h2>
+          <Basement>
+            <strong>Protokoll (Protocol):</strong> Gibt an, wie der Computer mit
+            der Webseite kommuniziert (z.B. http, https).
+          </Basement>
+          <Basement>
+            <strong>Benutzername (Username):</strong> Optionaler Name zur
+            Anmeldung auf der Webseite.
+          </Basement>
+          <Basement>
+            <strong>Passwort (Password):</strong> Optionales Passwort zur
+            Anmeldung.
+          </Basement>
+          <Basement>
+            <strong>Host (Host):</strong> Die Adresse der Webseite (z.B.
+            www.beispiel.de).
+          </Basement>
+          <Basement>
+            <strong>Pfad (Pathname):</strong> Zeigt die genaue Seite oder Datei
+            auf der Webseite an (z.B. /startseite).
+          </Basement>
+          <Basement>
+            <strong>Suchparameter (Search):</strong> Zusätzliche Informationen,
+            die an die Webseite übergeben werden (z.B. ?suche=blumen).
+          </Basement>
+          <Basement>
+            <strong>Anker (Hash):</strong> Verweist auf eine bestimmte Stelle
+            auf der Webseite (z.B. #kontakt).
+          </Basement>
+      </Slide>
+      <Slide>
+        <h2>URL Beispiele</h2>
+        <Basement>
+          Wenn Sie bei Google etwas suchen möchten, dann können Sie das direkt
+          in der
+          <strong>URL</strong> angeben. Es ist nicht immer <code>q=</code> aber
+          das können Sie schnell herausfinden wenn Sie eine Suche mit der
+          jeweiligen Suchmaschine machen.
+        <URLComponent url="https://www.google.com/search?q=netzwerke" />
+        </Basement>
+        <Basement>
+Der **Anker** oder oftmals auch als **Hash** bezeichnet, gibt uns eine
+praktische Möglichkeit um zu einem Element mit der ID des Ankers zu springen.
+Manchmal wird es auch anders verwendet, aber die meisten Browser und Webseiten
+verwenden es so, dass man direkt zum Element mit der **Anker-ID** gescrollt
+wird.
+
+<URLComponent url="https://gymmu.github.io/gym-inf/network-intro#url" />
+        </Basement>
+        <Basement>
+Wie könnten auch direkt den Benutzername und das Passwort in der **URL**
+mitschicken. Das sollte jedoch niemals gemacht werden, denn die **URL** könnte
+so in den Logeinträgen auf dem Webserver gespeichert werden, oder in der
+Browserhistory. Beides ist nicht verschlüsselt!!! In einem lokalen Netzwerk,
+kann so etwas aber praktisch sein.
+
+<URLComponent url="http://username:password@localhost:631/index.html" />
+        </Basement>
+      </Slide>
+      <Slide>
+        <h2>Internet</h2>
+          <Basement>
+<div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
+  <img src="./svg/network-diagram.svg" alt="Network Diagram" width="100%" />
+</div>
+          </Basement>
+          <Basement>
+        <ul>
+          <li className="fragment">Viele verschiedene Teile, die zusammenarbeiten.</li>
+          <li className="fragment">Webserver, DNS-Server, Router, IP-Adressen, Modem/ISP, Client.</li>
+          <li className="fragment">Router verbinden Geräte und leiten Daten weiter.</li>
+          <li className="fragment">DNS übersetzt Domain-Namen in IP-Adressen.</li>
+          <li className="fragment">IP-Adressen identifizieren Geräte im Netzwerk.</li>
+          <li className="fragment">ISP stellt Internetzugang bereit.</li>
+        </ul>
+        </Basement>
+      </Slide>
+      <Slide>
+        <h2>VPN (Virtual Private Network)</h2>
+        <ul>
+          <li className="fragment">Verschlüsselt Datenpakete und leitet sie über VPN-Server.</li>
+          <li className="fragment">Verbirgt die echte IP-Adresse und den Standort.</li>
+          <li className="fragment">Schützt vor Überwachung durch ISP.</li>
+          <li className="fragment">Vertrauen zum VPN-Anbieter ist wichtig.</li>
+        </ul>
+      </Slide>
+      <Slide>
+        <h2>NAT (Network Address Translation)</h2>
+          <Basement>
+          <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
+            <img src="./svg/nat-diagram.svg" alt="NAT Diagram" width="100%" />
+          </div>
+          </Basement>
+        <Basement>
+        <ul>
+          <li className="fragment">Übersetzt private IP-Adressen in öffentliche IP-Adresse.</li>
+          <li className="fragment">Ermöglicht mehreren Geräten die Nutzung einer öffentlichen IP.</li>
+          <li className="fragment">Bietet Schutz vor direktem Zugriff von außen.</li>
+        </ul>
+        </Basement>
+      </Slide>
+
+      <Slide>
+        <h2>Firewalls</h2>
+        <ul>
+          <li className="fragment">Kontrollieren den Datenverkehr zwischen Netzwerken.</li>
+          <li className="fragment">Schützen vor unerwünschtem Zugriff und schädlichen Daten.</li>
+          <li className="fragment">Wichtig für Netzwerksicherheit.</li>
+          <li className="fragment">Port-Forwarding ermöglicht Zugriff auf lokale Server.</li>
+        </ul>
+      </Slide>
+    </Presentation>
+
+Computernetzwerke werden verwendet um Daten zwischen verschiedenen Geräten
+auszutauschen. Das einfachste Beispiel ist der Besuch einer Webseite. Damit das
+funktionieren kann, müssen Sie von Ihrem Gerät eine Anfrage an ein anderen Gerät
+schicken, und sagen welche Webseite sie angezeigt haben möchten. Dieses
+Kommunikationsmodell bezeichnet man als ein
+[**Server-Client**-Modell](#server-client).
+
+<Example id="server-client" title="Server-Client Modell">
+  Beim <strong>Server-Client</strong>-Modell sind immer 2 Parteien involviert. Der <strong>Client</strong>
+  ist die Anwendung, die eine Anfrage stellt. Der <strong>Server</strong> ist die Anwendung,
+  die die Antwort zur Verfügung stellt. Das kann auf dem gleichen Gerät passieren,
+  oder wie meistens über das Internet. Damit diese Anwendungen miteinander
+  kommunizieren können, braucht es ein Protokoll. Beim Abrufen von Webseiten wird
+  dabei <strong>HTTP</strong> verwendet. Dabei steht <strong>HTTP</strong> für <strong>Hypertext Transfer
+  Protocol</strong>. Wenn die Verbindung verschlüsselt sein soll, dann ist es
+  <strong>HTTPS</strong>.
+
+<div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
+  <img
+    src="./svg/server-client-diagram.svg"
+    alt="Server Client Model Diagram"
+    width="100%"
+  />
+</div>
+
+</Example>
+
+<section>
+
+<h3 id="url">Webadressen</h3>
+
+Um auf eine Webseite zugreifen zu können, brauchen wir einen Link bzw. eine
+Webadresse. Der korrekte Begriff dafür ist <strong>URL</strong> (Uniform
+Resource Locator). Eine <strong>URL</strong> ist nach dem folgenden Schema
+aufgebaut:
+
+<URLComponent url="https://www.gym-muttenz.ch/index.php" />
+
+<ul>
+  <li>
+    <strong>Protokoll (Protocol):</strong> Gibt an, wie der Computer mit der
+    Webseite kommuniziert (z.B. http, https).
+  </li>
+  <li>
+    <strong>Benutzername (Username):</strong> Optionaler Name zur Anmeldung auf
+    der Webseite.
+  </li>
+  <li>
+    <strong>Passwort (Password):</strong> Optionales Passwort zur Anmeldung.
+  </li>
+  <li>
+    <strong>Host (Host):</strong> Die Adresse der Webseite (z.B.
+    www.beispiel.de).
+  </li>
+  <li>
+    <strong>Pfad (Pathname):</strong> Zeigt die genaue Seite oder Datei auf der
+    Webseite an (z.B. /startseite).
+  </li>
+  <li>
+    <strong>Suchparameter (Search):</strong> Zusätzliche Informationen, die an
+    die Webseite übergeben werden (z.B. ?suche=blumen).
+  </li>
+  <li>
+    <strong>Anker (Hash):</strong> Verweist auf eine bestimmte Stelle auf der
+    Webseite (z.B. #kontakt).
+  </li>
+</ul>
+
+Wenn Sie bei Google etwas suchen möchten, dann können Sie das direkt in der
+
+<strong>URL</strong> angeben. Es ist nicht immer <code>q=</code> aber das können
+Sie schnell herausfinden wenn Sie eine Suche mit der jeweiligen Suchmaschine
+machen.
+
+<URLComponent url="https://www.google.com/search?q=netzwerke" />
+
+Der **Anker** oder oftmals auch als **Hash** bezeichnet, gibt uns eine
+praktische Möglichkeit um zu einem Element mit der ID des Ankers zu springen.
+Manchmal wird es auch anders verwendet, aber die meisten Browser und Webseiten
+verwenden es so, dass man direkt zum Element mit der **Anker-ID** gescrollt
+wird.
+
+<URLComponent url="https://gymmu.github.io/gym-inf/network-intro#url" />
+
+Wie könnten auch direkt den Benutzername und das Passwort in der **URL**
+mitschicken. Das sollte jedoch niemals gemacht werden, denn die **URL** könnte
+so in den Logeinträgen auf dem Webserver gespeichert werden, oder in der
+Browserhistory. Beides ist nicht verschlüsselt!!! In einem lokalen Netzwerk,
+kann so etwas aber praktisch sein.
+
+<URLComponent url="http://username:password@localhost:631/index.html" />
+
+Mit dieser **URL** kann man sich beim _Linux_-Systemen beim lokalen
+Druckerservice anmelden. Da die Verbindung dann nur zum eigenen Computer ist,
+braucht es keine Verschlüsselung, und das Passwort kann auch übermittelt werden.
+Danach sollte aber die Browserhistory gelöscht werden.
+
+Man kann natürlich alles miteinander kombinieren, und über die **URL** bereits
+sehr viele Daten an den Webserver schicken. Aber wie genau finden die Daten denn
+zum Webserver?
+
+</section>
+
+<Example id="internet" title="Internet">
+
+Das Internet besteht aus ganz vielen verschiedenen Teilen. Wir schauen uns eine
+vereinfachte Darstellung davon an und versuchen die wichtigsten Teile zu
+verstehen.
+
+<div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
+  <img src="./svg/network-diagram.svg" alt="Network Diagram" width="100%" />
+</div>
+
+#### Webserver
+
+Das sind Computer die irgendwo am Netzwerk angehängt sind, und über eine
+öffentliche **IP-Adresse** verfügen. Ein Webserver nimmt Anfragen von einem
+Client entgegen, und schickt meistens eine Webseite, oder einfach nur Daten
+zurück.
+
+#### DNS-Server
+
+Das sind einige wenige spezielle Server die auf der ganzen Welt verteilt sind.
+Ein DNS-Server speichert welche **IP-Adresse** zu welchem **Domain-Name** passt.
+Wenn man also die **IP-Adresse** von `github.com` nicht auswendig weiss, kann
+man das beim **DNS-Server** anfragen. Das passiert automatisch, und wird dann
+auf allen Zwischengeräten gespeichert, so dass nicht jedes mal eine Anfrage an
+den **DNS-Server** gemacht werden muss.
+
+**DNS** steht übrigens für Domain-Name-System.
+
+#### Router
+
+Die **Router** sind das Herzstück vom Internet. Damit Daten durch das Internet
+geschickt werden können, müssen mehrere **Router** miteinander verbunden sein.
+Ein Router merkt sich dann immer mit welchen Geräten er verbunden ist. Wenn nun
+einen Anfrage kommt, kann der Router diese gezielt an den nächsten Router
+weiterleiten, oder wenn es eine ganz neue Verbindung ist, kann er einfach an
+alle weiterleiten die er kennt.
+
+#### IP-Adresse
+
+Alle Geräte die im Internet sind, haben eine **IP-Adresse**. Die Geräte
+untereinander sprechen sich über die **IP-Adresse** an, nicht über den
+**Domain-Name**, so wie wir das machen würden.
+
+Eine **IPv4-Adresse** besteht aus vier Zahlen, die durch Punkte getrennt sind.
+Jede Zahl kann einen Wert von 0 bis 255 haben. Eine IPv4-Adresse besteht aus 4
+Bytes (32 Bit). Beispiele für IPv4-Adressen sind:
+
+- **Localhost:** 127.0.0.1 (wird verwendet, um auf den eigenen Computer zu
+  verweisen)
+- **Lokales Netzwerk:** 192.168.1.1 (häufig verwendete Adresse für Router in
+  privaten Netzwerken)
+- **DNS-Server:** 8.8.8.8 (ein öffentlicher DNS-Server von Google)
+
+#### Modem / ISP
+
+Ein **IPS** ist Ihr Internet-Service-Provider, also die Firma die Ihnen den
+Anschluss and Internet anbietet. Bei den meisten wird das _Swisscom_, _Sunrise_
+oder _Cablecom_ sein. Diese Firma stellt Ihnen ein **Modem** zur Verfügung,
+welches über das Internet erreichbar ist (es hat eine öffentliche IP-Adresse).
+Das **Modem** funktioniert dann wie ein **Router**. Es kennt alle Geräte im
+lokalen Netzwerk, und kann Daten zu diesen schicken. Wenn Daten nach draussen
+sollen, dann schickt es diese einfach zum nächsten **Router**. Der ist dann
+meistens beim **ISP** selbst, und von dort werden die Daten dann weiter
+geleitet.
+
+Das heisst also, Ihr **ISP** weiss immer ganz genau welche Webseiten Sie
+besuchen. Mit einem **VPN** kann man sich davor schützen, die Daten liegen dann
+aber beim **VPN**.
+
+#### Client
+
+Das sind die Endgeräte, wie Laptops und Smartphones die an einem lokalen Netz
+angehängt sind. Wenn wir zwischen 2 Geräten kommunizieren möchten, dann geht das
+immer über ein weiteres Gerät (z.B. das **Modem**). Es ist schon auch möglich
+eine wirklich direkte Verbindung aufzubauen, aber das ist oftmals zu mühsam. Nun
+sollte auch klar sein, dass alle Verbindungen und Daten im Internet abgehört
+werden können. Denn alle Geräte sind miteinander verbunden. Wenn man es schaft
+sich bei einer Verbindung dazwischen zu schalten, dann kann man den ganzen
+Verkehr auf dieser Verbindung abhören und auswerten. In diesem Fall spricht man
+von einer **man-in-the-middle**-Attacke. Um sich davon zumindest teilweise zu
+schützen, ist es wichtig das nur Verbindungen über **HTTPS** verwendet werden.
+
+</Example>
+
+<h2 id="vpn">Anonym im Internet (VPN)</h2>
+
+Sie haben sicher schon davon gehört das Sie mit einem **VPN** anonym und sicher
+im Internet surfen können. Sie können auch ganz eifach den Standort wechseln
+wenn Sie ein **VPN** verwenden. Schauen wir uns doch zusammen an, was es damit
+auf sich hat.
+
+Zuerst müssen Sie verstehen wie man einem Gerät im Internet einen geografischen
+Standort zuweisen kann. Das ist ganz einfach, Ihr **ISP** hat das in einer
+Datenbank registriert. Wie genau die Adresse tatsächlich ist, hängt vom **ISP**
+ab. Das kann Ihre exakte Adresse sein, oder einfach nur der Ort in dem Sie
+registriert sind. Das reicht aber schon aus, um gewisse Inhalte für Sie zu
+blockieren. Das passiert ganz oft bei _Netflix_ oder ähnlichen anbietern, wenn
+es wegen der Lizenz nicht möglich ist einen Inhalt in anderen Ländern zu
+publizieren. Um das zu umgehen, verwenden viele ein **VPN**. Aber was passier
+bei einem **VPN** denn genau.
+
+Ein **VPN** ist ein Programm das bei Ihnen auf dem Computer läuft. Bevor irgend
+ein Datenpacket verschickt wird, wird das Packet verschlüsselt, dann wird das
+verschlüsselte Packet an den **VPN**-Anbieter geschickt. Dort wird es entpackt
+und dann erneut an das eigentliche Ziel verschickt. Sie sieht es für den
+Empfänger so aus, als ob die Daten vom **VPN**-Server direkt kommen, und nicht
+von Ihnen. Auf dem Rückweg werden die Daten dann wieder zum **VPN** geschickt,
+wieder verschlüsselt, und zurück an Sie geschickt.
+
+Wenn jemand (Ihr **ISP** zum Beispiel) diese Verbindung nun abhört, sieht man
+nur dass Sie mit dem **VPN** kommunizieren. Ihr **ISP** kann Sie also nicht mehr
+ausspionieren. Früher (heute noch immer) wird diese Technik gerne verwendet um
+sich in Firmennetze zu verbinden. Daher der Name **virtual private network**.
+
+Ob Sie nun mit einem **VPN** tatsächlich anonym im Internet unterwegs sind,
+können Sie sich sehr einfach ausdenken. Ihr **ISP** und alle anderen die
+mithören würden, können Ihre Verbindungen nicht mehr lesen, oder das Ziel davon
+sehen. Wenn es vom **VPN** weitergeht, kann das Ziel nicht sehen wer der
+Absender war (ausser natürlich Sie sind mit einem Account eingeloggt). Es wirkt
+also als seien Sie tatsächlich anonym, ausser natürlich für den
+**VPN**-Anbieter. Da müssen Sie sich dann fragen wie sehr Sie dem Vertrauen
+möchten. denn nimmt man das mit der _No Log Policy_ wörtlich, merken Sie ganz
+schnell das es technisch garnicht möglich ist. Bis eine Antwort zurück zum
+Absender geschickt wurde, muss ein **VPN** speichern woher die Anfrage gekommen
+ist, und wo sie hingeht, sonst kann die Antwort nicht zugestellt werden. Danach
+kann man aber alles löschen. Ob das tatsächlich gemacht wird, ist aber fraglich.
+Denn Ihr **ISP** behält all Ihre Verbindungsdaten über mehrere Jahre. Technisch
+ist es also sicher möglich solche grossen Datenmengen zu speichern.
+
+Man kann also sagen dass Sie ein wenig anonymer im Internet unterwegs sind, wenn
+Sie ein **VPN** verwenden. Die Problematik wer all Ihre Verbindungsdaten hat,
+verschiebt sich dann einfach vom **ISP** zum **VPN**.
+
+<Example id="nat" title="NAT (Network Address Translation)">
+
+Es git ein sehr grosses Problem mit den **IP-Adressen**. Es hat nicht genügend
+Adressen für alle Geräte, deshalb hat man sich einen Tick mit **NAT** einfallen
+lassen.
+
+In einem lokalen Netzwerk haben viele Geräte private IP-Adressen, die nur
+innerhalb dieses Netzwerks gültig sind. Damit diese Geräte trotzdem mit dem
+Internet kommunizieren können, wird **NAT** verwendet.
+
+**NAT** steht für _Network Address Translation_. Es ist eine Technik, bei der
+ein Router die privaten IP-Adressen der Geräte im lokalen Netzwerk in eine
+öffentliche IP-Adresse übersetzt, die im Internet verwendet wird.
+
+Wenn ein Gerät im lokalen Netzwerk eine Anfrage ins Internet schickt, ersetzt
+der Router die private IP-Adresse durch seine eigene öffentliche IP-Adresse. Die
+Antwort vom Internet wird dann vom Router wieder an das richtige Gerät im
+lokalen Netzwerk weitergeleitet.
+
+Dadurch können viele Geräte in einem lokalen Netzwerk dieselbe öffentliche
+IP-Adresse teilen, was die Anzahl der benötigten öffentlichen IP-Adressen
+reduziert.
+
+Ein weiterer Vorteil von **NAT** ist, dass es eine Art Schutz bietet, da Geräte
+im lokalen Netzwerk von aussen nicht direkt erreichbar sind.
+
+<div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
+  <img src="./svg/nat-diagram.svg" alt="NAT Diagramm" width="100%" />
+</div>
+
+</Example>
+
+<section>
+
+<h2 id="firewalls">Firewalls</h2>
+
+Firewalls sind Sicherheitsmechanismen, die den Datenverkehr zwischen
+verschiedenen Netzwerken kontrollieren. Sie entscheiden, welche Verbindungen
+erlaubt sind und welche blockiert werden.
+
+Eine Firewall kann entweder als Software auf einem Gerät oder als eigenständiges
+Gerät im Netzwerk eingesetzt werden.
+
+Firewalls schützen Netzwerke vor unerwünschtem Zugriff von aussen und helfen
+dabei, schädliche Datenpakete zu erkennen und zu blockieren.
+
+Sie sind ein wichtiger Bestandteil der Netzwerksicherheit und tragen dazu bei,
+dass nur vertrauenswürdige Verbindungen zugelassen werden.
+
+Wenn Sie einen Server bei sich zu Hause laufen lassen möchten, damit andere auf
+Ihren Server zugreifen können, müssen Sie die nötigen Ports in der Firewall
+freischalten. Das machen Sie auf dem **Modem** und der Vorgang nennt sich dort
+oftmals _Port-Forwarding_. Sie sagen dem Gerät also dass Verbindungen auf einem
+bestimmten Port, zum Beispiel 5173 an eine lokale **IP-Adresse** geschickt
+werden soll. So verwenden Sie dann **NAT** um Ihren Server für das ganze
+Internet bereitzustellen.
+
+</section>
+
+<Example id="summary" title="Zusammenfassung" classes="example">
+
+Hier finden Sie eine Zusammenfassung zum ganzen Artikel. Die Zusammenfassung
+wurde von einer KI generiert und hat somit keine Garantie auf Korrektheit.
+Prüfen Sie Aussagen in der Zusammenfassung besser mit der Webseite ab. Falls
+immernoch Unklarheit besteht, fragen Sie am besten gleich nach. Aber üben Sie
+sich zuerst im kritischen Denken.
+
+<div style={{ display: "flex", justifyContent: "center" }}>
+  <Audio src="./assets/audio/podcast-network.mp3" />
+</div>
+
+</Example>
+
+</Chapter>

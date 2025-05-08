@@ -1,0 +1,120 @@
+import Chapter from "../../components/Chapter"
+import Example from "../../components/Example"
+
+<Chapter>
+
+## HTML Attribute
+
+Einige HTML Elemente sind speziell und brauchen zusätzliche Informationen. Diese
+Zusatzinformationen nennt man Attribute.
+
+<Example title="Beispiel: Links">
+
+Ein Link (oder auch Anchor-Tag) ist ein Element das zusätzliche Informationen
+braucht. Das Element selbst bekommt den Text, der auf der Webseite angezeigt
+wird, zusätzlich muss man dem Tag aber noch sagen auf welche Webseite verlinkt
+werden soll.
+
+```html
+<a href="https://www.gym-muttenz.ch">Gym Muttenz</a>
+```
+
+in diesem Fall ist das `href=` das Attribut, und sagt auf welche Webseite
+verlinkt wird.
+
+</Example>
+
+### Weitere Elemente mit Attributen
+
+Auch Bilder brauchen ein Attribut welches sagt wo sich das Bild befindet. Hier
+können auch weitere Attribute wie die Höhe oder Breite des Bildes angegeben
+werden.
+
+<Example title="Aufgabe: Bilder hinzufügen">
+
+<a href="https://www.w3schools.com/html/html_images.asp">Hier</a> finden Sie
+alles was Sie über Bilder wissen müssen. Testen Sie es aus, indem Sie Bilder
+von verschiedener Grösse in Ihre Webseite einfügen.
+</Example>
+
+### IDs
+
+**IDs** sind praktische Attribute die Sie an jedes Element zuweisen können.
+Wichtig dabei ist das IDs beschreibend für das Element sind, und eindeutig auf
+der Webseite vergeben sind.
+
+<Example title="Beispiel: Abschnitt mit einer ID">
+
+Sie können einem Abschnitt eine **ID** zuweisen, damit wir später darauf
+verlinken können.
+
+```html
+<section id="very-important-section">
+  Dies ist ein Abschnitt mit einer ID.
+</section>
+```
+
+</Example>
+
+**IDs** werden verwendet um spezielle Elemente zu kennzeichnen. Diese können
+dann speziell gestaltet werden, oder man kann darauf verlinken innerhalb einer
+Webseite. Die Webseite scrollt dann direkt zu dem Element das Sie verlinkt
+haben.
+
+<Example title="Aufgabe: Link auf ein Element erstellen">
+
+Um auf ein Element mit einer ID zu verlinken, können Sie den folgenden Code
+verwenden.
+
+```html
+<a href="#very-important-section">Sehr wichtiger Abschnitt</a>
+```
+
+Um auf **IDs** zu verlinken, stellen Sie einfach das Zeichen `#` vor die **ID**.
+
+</Example>
+
+### Klassen
+
+**Klassen** werden später gebraucht um Elemente zu gestalten. Im Moment bringen
+Sie uns noch nicht so viel, ausser das wir _ähnliche_ Elemente gruppieren
+können.
+
+<Example title="Beispiel: Sehr wichtige Elemente">
+  Mit `<strong>` können Sie ein wichtiges Element hervorheben. Aber auch{" "}
+  `<em>` hebt wichtige Elemente hervor. Wir können aber auch noch ein
+  sehr wichtiges Element haben.
+
+```html
+<strong class="very-important">Super wichtig</strong>
+```
+
+und
+
+```html
+<em class="very-important">Super wichtig, aber anders</em>
+```
+
+Sind jeweils super wichtige Elemente, werden aber anders dargestellt.
+
+</Example>
+
+### Elemente gestalten
+
+Mit dem `<style>`-Tag, können wir die Elemente gestalten. Damit können wir
+zusätzliche Styles für Klassen angeben.
+
+<Example title="Beispiel: Rote Schrift">
+Wir können sehr wichtige Elemente mit roter Schrift zusätzlich
+hervorheben.
+
+```html
+<style>
+  .very-important {
+    color: red;
+  }
+</style>
+```
+
+</Example>
+</Chapter>

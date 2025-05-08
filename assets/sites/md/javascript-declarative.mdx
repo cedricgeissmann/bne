@@ -1,0 +1,125 @@
+import Example from "../../components/Example.jsx"
+import Chapter from "../../components/Chapter.jsx"
+
+<Chapter>
+## Deklarativer Code
+
+<section>
+
+Wenn wir von deklarativem Code sprechen, dann soll das immer Code sein, der sich
+möglichst selbst erklärt. Teilweise kann das ganz einfach mit Variablen gemacht
+werden, teilweise braucht es aber auch Kommentare, denn einige Codes sind nicht
+so gut lesbar wie andere.
+
+Bei deklarativem Code gibt es eine sehr einfache Regel: **Jede Zeile
+dokumentiert sich selber, oder hat einen Kommentar**. Mit dieser einfachen
+Regel, kommen wir bereits sehr weit. Am Anfang ist es für Sie aber noch so, dass
+einzelne Stücke Code schwer zu lesen sind, die werden dann mit der Zeit aber
+klarer. Solche Stücke müssen Sie mit der Zeit nicht mehr kommentieren. Ein
+Beispiel dafür ist der Code den Sie in den Aufgaben sehr oft sehen.
+
+```javascript
+export function aufgabe01(args) {
+  const input = args // Speichert args unter dem Namen input
+  const result = [] // Leere Liste für das Resultat
+
+  for (let i = 0; i < input.length; i++) {
+    // Zählt über den Text in input
+
+    const currentLetter = input[i] // Speichert das aktuelle Zeichen aus input in der Variable currentLetter
+
+    const currentUpperCaseLetter = currentLetter.toUpperCase()
+
+    result.push(currentUpperCaseLetter) // Hängt die Grossbuchstabenversion am Ende von Resultat an
+  }
+
+  return result.join("") // Macht aus der Liste einen Text (technisches Detail)
+}
+```
+
+Hier Ist alles was normalerweise in diesen Aufgaben drin ist, mit Kommentaren
+erklärt, da es bei dem Code noch nicht klar ist, was hier passiert. Je öfter Sie
+den Code aber verwenden, desto mehr verstehen Sie hoffentlich was da gemacht
+wird, dann können Sie die Kommentare aus weglassen, denn für Programmierende mit
+mehr Erfahrung, ist dieser Code bereits sehr deklarativ.
+
+Die einzige Zeile die hier nicht kommentiert ist, ist eine neue Zeile. Da steht
+die Erklährung aber im Variablenname `currentUpperCaseLetter`. Wie genau wir den
+Wert dafür erhalten, interessiert uns nicht so sehr, das würden wir uns erst
+anschauen, wenn es einen Fehler im Code gibt. Sie müssen den Code aber selber
+schreiben, haben sich aber diesen Schritt gerade sehr viel einfacher gemacht.
+Denn Sie beschreiben bereits was Sie machen möchten, von da an ist es nur noch
+eine einfache Suche im Skript, oder im Internet.
+
+</section>
+
+## Praktische Funktionen
+
+<section>
+
+Javascript hat einige praktische Funktionen bereits eingebaut. Hier gibt es ein
+paar Beispiele dazu, die können Sie vielleicht in den Übungen verwenden.
+
+### Zu einem Grossbuchstaben umwandeln
+
+```javascript
+const letter = "a"
+const upperCaseLetter = letter.toUpperCase()
+```
+
+### Zu einem Kleinbuchstaben umwandeln
+
+```javascript
+const letter = "C"
+const lowerCaseLetter = letter.toLowerCase()
+```
+
+### Länge einer Liste bestimmen
+
+```javascript
+const list = [1, 2, 3, 6, 4, 5]
+const len = list.length
+```
+
+### In eine Ganzzahl umwandeln
+
+```javascript
+const str = "10"
+const num = parseInt(str)
+```
+
+### In eine Kommazahl umwandeln
+
+```javascript
+const str "17.9"
+const float = parseFloat(str)
+```
+
+### ASCII-Code von einem Buchstaben bestimmen
+
+```javascript
+const letter = "A"
+const ascii = letter.charCodeAt(0)
+```
+
+### ASCII-Code in einen Buchstaben umwandeln
+
+```javascript
+const code = 65
+const letter = String.fromCharCode(code)
+```
+
+### Länge einer Liste ist gerade
+
+```javascript
+const list = [1, 2, 3, 4, 5]
+if (list.length % 2 == 0) {
+  // ist gerade
+} else {
+  // ist ungerade
+}
+```
+
+</section>
+
+</Chapter>

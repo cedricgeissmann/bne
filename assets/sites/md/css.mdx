@@ -1,0 +1,197 @@
+import Chapter from "../../components/Chapter"
+import Example from "../../components/Example"
+import Fiddle from "../../components/Fiddle"
+import Presentation, {
+  Slide,
+  Fragment,
+  Basement,
+} from "../../components/Reveal"
+
+<Chapter>
+
+## Webseiten gestalten
+
+<section>
+
+<Presentation>
+  <Slide>
+    <Basement>
+    ## `Klassen` in CSS
+      <ul>
+        <li class="fragment">
+          Eine `Klasse` in CSS ist ein Attribut, das wir einem `HTML`-Element
+          geben können.
+        </li>
+        <li class="fragment">
+          Bsp.: `<h1 class="important">Wichtiger Titel</h1>`
+        </li>
+        <li class="fragment">
+          Diese `Klasse` können wir in CSS auswählen, und die Gestaltung für das
+          Element anpassen.
+        </li>
+        <li class="fragment">
+          Bsp.: `h1 {
+            background-color: green;
+          }`
+        </li>
+      </ul>
+    </Basement>
+    <Basement>
+      <Fiddle
+        html={`<h1 class="my-title">Titel</h1>`}
+        css={`
+          .my-title {
+            background-color: green;
+          }
+        `}
+      />
+    </Basement>
+  </Slide>
+  <Slide>
+    <Basement>
+      ## Eigenschaften anpassen durch CSS
+      <ul>
+        <li class="fragment">Mit CSS setzen wir die Eigenschaften von einem
+        Element</li>
+        <li class="fragment">Der **Selektor** beschreibt welche Element gewählt
+        werden</li>
+        <li class="fragment">Die **Regeln** beschreiben wie der Browser das
+        Element zeichnet</li>
+        <li class="fragment">ACHTUNG! Ein Element kann auch von mehreren
+        Selektoren getroffen werden</li>
+        <li class="fragment">Wichtige Eigenschaften sind: `width, height,
+        background-color, margin, padding, border`</li>
+      </ul>
+    </Basement>
+    <Basement>
+    <Fiddle
+        html={`<div class="my-box">box</div>`}
+        css={`
+          .my-box {
+            background-color: green;
+            width: 100px;
+            height: 100px;
+            margin: 0px;
+            padding: 20px;
+            border: 2px dotted red;
+          }
+        `}
+      />
+    </Basement>
+  </Slide>
+   <Slide>
+    <Basement>
+      ## `Inline` vs `Block` vs `Flex`
+      <ul>
+        <li class="fragment">CSS unterschiedet verschiedene Arten von Display</li>
+        <li class="fragment">`Inline` werden Elemente aneinander gehängt</li>
+        <li class="fragment">`Block` ein Element braucht die volle Breite</li>
+        <li class="fragment">`Flex` Elemente darin können entlang einer Achse
+        ausgerichtet werden</li>
+        <li class="fragment">`<div>`-Elemente sollten immer als Container
+        verwendet werden</li>
+      </ul>
+    </Basement>
+    <Basement>
+    <Fiddle
+        html={`<div class="my-container">
+  <div class="my-box">box</div>
+</div>`}
+        css={`
+          .my-box {
+            background-color: green;
+            width: 100px;
+            height: 100px;
+            margin: 0px;
+            padding: 20px;
+            border: 2px dotted red;
+          }
+        `}
+      />
+    </Basement>
+  </Slide>
+</Presentation>
+
+Bisher haben wir uns mit der Struktur von Webseiten beschäftigt. Nun möchten wir
+diese Strukturen auch verwenden um die Webseiten zu gestalten. Dies wird mit
+
+<b>CSS</b> (Cascading Style Sheets) gemacht.
+
+</section>
+
+### Stylesheet einbinden
+
+Um eine saubere Trennung von Struktur und Gestaltung zu erreichen, können
+Stylesheets in Webseiten eingebunden werden. Damit können Styles auch auf
+mehreren Webseiten verwendet werden, und müssen nicht immer wiederholt werden.
+
+<Example title="Aufgabe: Stylesheet verlinken">
+  Fügen Sie den folgenden Code im `<head>` von Ihrem HTML Dokument
+  ein.
+
+```html
+<link rel="stylesheet" href="style.css" />
+```
+
+Erstellen Sie dann eine neue Datei mit dem Namen `style.css`
+
+</Example>
+
+### Stylesheet verwenden
+
+Haben Sie das Stylesheet eingebunden, möchten wir als erstes ausprobieren ob es
+funktioniert hat. Am einfachsten geht das wenn Sie eine direkt sichtbare
+Änderung machen. Zum Beispiel können Sie die Hintergrundfarbe der Webseite
+ändern.
+
+<Example title="Aufgabe: Neue Hintergrundfarbe">
+  Öffnen Sie `style.css` und geben Sie den folgenden Code
+  ein:
+
+```css
+body {
+  background-color: red;
+}
+```
+
+Der Hintergrund Ihrer ganzen Seite, sollte nun rot sein.
+
+</Example>
+
+### Weitere Elemente
+
+Sie können in CSS einzelne Elemente unterschiedlich gestalten, dafür brauchen
+Sie einfach weitere Regeln. Diese werden in der gleichen Datei eingefügt.
+
+<Example title="Aufgabe: Schriftfarbe des Titels ändern">
+
+Um den Titel besser hervorzuheben, möchten wir gerne die Farbe des Titels
+ändern, aber den Rest der Seite so lassen. Verwenden Sie dafür diese neue Regel.
+
+```css
+h1 {
+  color: whitesmoke;
+  text-decoration: underline;
+  text-align: center;
+}
+```
+
+Sie sollten nun einen zentrierten Titel haben der unterstrichen ist.
+
+</Example>
+
+### Mit CSS Regeln experimentieren
+
+Wie Sie gesehen haben, kann man verschiedene Regeln auf unterschiedliche
+Elemente anwenden. Versuchen Sie mithilfe des Editors eine weitere Regel für ein
+
+`<p>`-Tag zu erstellen, und diese anders zu gestalten.
+
+<Example title="Aufgabe: Webseite gestalten">
+
+Testen Sie verschiedene Stile für Ihre Webseite aus. Erstellen Sie jeweils einen
+neuen Commit, wenn Sie mit einem Stil zufrieden sind. Verändern Sie Ihren Stil
+mindestens 3 mal, um die History von Ihrem Projekt zu vergrössern.
+
+</Example>
+</Chapter>

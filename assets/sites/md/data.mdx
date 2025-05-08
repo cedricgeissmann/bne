@@ -1,0 +1,249 @@
+import Chapter from "../../components/Chapter"
+import Example from "../../components/Example"
+import VSpace from "../../components/VSpace"
+import Katex from "../../components/Katex"
+
+import HexCell from "../../components/HexCell"
+import XORCell from "../../components/XORCell"
+
+<Chapter>
+
+## Daten
+
+In der Informatik sind **Daten** eines der wichtigsten Konzepte, denn die Daten
+beinhalten die Informationen für die Algorithmen. Aber was genau heisst das, und
+was verstehen wir dann unter Daten?
+
+Aus dem `Javascript`-Projekt, wissen Sie noch das wir immer auf Text gearbeitet
+haben. Wir haben diesen Text immer in einen neuen umgewandelt. Der Text in
+diesen Ausfgaben waren die Daten und die Funktionen die Sie geschrieben haben,
+das war der Algorithmus der über die Daten läuft.
+
+Für uns sind Daten also Informationen die im Computer gespeichert sind. Das
+können dann Zeichenketten, Zahlen, Listen und Wahrheitswerte sein. Das sind die
+Dinge die Sie bis jetzt schon gesehen haben. Aber auch der Code ist eine Form
+von Daten, denn auch dieser muss auf dem Comupter gespeichert werden, so das wir
+die Algorithmen auch ausführen können. Wir können also sagen dass alles was im
+(Arbeits-)speicher des Computers ist, zählen wir als Daten.
+
+### Wozu brauchen wir Daten?
+
+Ganz einfach, für den Austausch von Informationen. Stellen Sie sich vor Sie
+würden Webseiten besuchen auf denen keine Daten sind, das wäre recht sinnfrei
+und auch langweilig. Und auch überhaupt nicht möglich, denn das `HTML` und `CSS`
+muss zuerst an Ihren Computer geschickt werden, bevor Sie die Webseite überhaupt
+anzeigen können. Daten sind also die Grundlage von allem in der Informatik.
+
+Wenn Sie an den _Inhalt_ einer Webseite denken, dann beschreiben die Daten
+Informationen aus der realen Welt. Wir können also Daten (oder besser gesagt
+Techniken aus der Datenrepresentation) für das Modellieren der realen Welt
+verwenden.
+
+<Example title="Modellieren mit Daten" classes="example">
+
+Objekte aus der realen Welt haben alle unterschiedliche Eigenschaften. Wenn wir
+ähnliche Objekte zusammen nehmen, können wir daraus eine Klasse machen, wo alle
+Objekte die gleichen Eigenschaften, aber mit unterschiedlichen Werten haben.
+Schauen wir uns eine vereinfachte Version von einer Person an, dann können wir
+eine einzelne Person mit den folgenden Eigenschaften beschreiben:
+
+```javascript
+{
+  "vorname": "Peter",
+  "nachname": "Muster",
+  "geburtsdatum": "01.01.2001",
+  "email": "peter.muster@email.net"
+}
+```
+
+Wir haben uns hier für sehr wenige Eigenschaften entschieden. Und auch nicht
+alle davon ergeben Sinn, denn sehr junge Personen haben oft noch keine eigene
+Email-Adresse. Das ist etwas dass müssen wir beim modellieren immer bedenken.
+Wir können (und müssen) nicht alle Eigenschaften abbilden. Wir brauchen nur die
+Teile die für unsere Anwendung wichtig sind.
+
+</Example>
+
+### Durch modellieren die Welt besser verstehen
+
+Wenn wir einen Sachverhalt aus der reallen Welt darstellen möchten, müssen wir
+den Sachverhalt richtig gut verstehen. Das modellieren kann uns dabei sehr gut
+helfen, denn wenn wir ein Objekt mit den Eigenschaften erstellen, sehen wir
+gleich welche Eigenschaften wir überhaupt haben, und welche Eigenschaften wir
+brauchen.
+
+<Example title="Aufgabe: Objekte selber modellieren">
+
+Wenn Sie an ein Buch denken, kommen Ihnen sicher einige Eigenschaften in den
+Sinn. Versuchen Sie mal ein Objekt Buch zu modellieren. Haben Sie an alle
+Eigenschaften gedacht? Gibt es Eigenschaften die Sie nicht wirklich brauchen
+können?
+
+</Example>
+
+### Redundanz von Daten
+
+Beim Modellieren sollten Sie immer darauf achten dass Daten nicht doppelt
+vorkommen, also das Daten nicht redundant sind. Auch wenn Eigenschaften aus
+anderen berechnet / abgeleitet werden können, sollten diese nicht beim
+modellieren angegeben werden, ausser vielleicht mit einer Funktion.
+
+Es macht zum Beispiel keinen Sinn das Alter von einer Person zu speichern, wenn
+Sie auch das Geburtsdatum haben. Denn das Alter ändert sich ständig, aber das
+Geburtsdatum bleibt immer gleich.
+
+<Example title="Aufgabe: Redundanz in den Daten reduzieren" classes="exercise">
+
+In dieser Aufgabe wird eine Person modelliert. Die hat hier sehr viele
+Eigenschaften. Diskutieren Sie welche Eigenschaften redundant sind, und wieso.
+Modellieren Sie die Person dann neu mit allen Informationen die Sie für relevant
+halten. Haben beide Objekte noch den gleichen Informationsgehalt?
+
+```javascript
+{
+   "vorname": "Peter",
+   "nachname": "Muster",
+   "vollname": "Peter Muster",
+   "geburtsdatum": "01.01.2001",
+   "alter": 24,
+   "grösse_cm": 176,
+   "grösse_m": 1.76,
+   "reichhöhe_mm": 2260,
+   "sprung_und_reichhöhe_m": 3.06,
+   "sprungkraft_km": 0.0008,
+   "abschlaghöhe_dm": 29.5,
+   "u23": false,
+   "u20": false,
+   "u18": false,
+   "u16": false,
+   "u14": false,
+   "kids": false,
+   "jahrgang": 2001,
+   "geburtsmonat": "Januar",
+   "geburtswoche": 1,
+   "geburtswochentag": "Montag",
+   "geburtswochentag_en": "Monday"
+}
+```
+
+In dem Beispiel haben wir auch unterschiedliche Einheiten, macht es Sinn diese
+so in den Daten zu haben? Sollte alles in der gleichen Einheit sein?
+
+</Example>
+
+Es ist nicht immer ganz einfach zu wissen welche Eigenschaften redundant sind.
+Im obigen Beispiel ist das Alter sehr praktisch, denn damit können wir schnell
+entschieden in welcher Kategorie eine Person spielen darf, jedoch muss das Alter
+jedes Jahr neu berechnet werden. Hier befinden wir uns in einer Grauzone was die
+Redundanzregel betrifft. Generell möchten Sie Informationen nie doppelt
+abgebildet haben in Ihren Daten, denn wenn sich was ändert, müssen Sie das an
+allen Stellen ändern, sonst sind Ihre Daten inkonsistent und das möchten Sie
+keinesfalls. Aber was kann man dagegen machen?
+
+Wir können die Eigenschaften die berechnet, oder abgeleitet sind, ganz einfach
+markieren. Wenn wir finden das Alter ist wichtig für unseren Fall, also wir
+brauchen es immer wieder, dann merken wir das einfach im Schlüssel an.
+
+```javascript
+{
+   "vorname": "Peter",
+   "nachname": "Muster",
+   "geburtstag": "01.01.2001",
+   "alter_B": 24
+}
+```
+
+Wie man angibt dass eine Eigenschaft berechnet ist, ist nicht wirklich
+festgelegt. In manchen Programmiersprachen kann man dafür die Funktion wie die
+Eigenschaft berechnet wird direkt angeben. Das ist aber nicht interessant für
+uns, denn wir möchten nur über die Daten sprechen. Wir haben uns jetzt hier dazu
+entschieden ein `_B` anzugeben, daran können wir erkennen welche Eigenschaften
+berechnet / abgeleitet sind. Bei diesen Eigenschaften müssen wir jeweils darauf
+achten, dass wir die Berechnung anpassen, wenn sich ein Wert ändert.
+
+<Example title="Objekte mit berechneten Eigenschaften">
+
+Sie sollen sich selber ein Beispiel überlegen, in dem Sie abgeleitete
+Eigenschaften haben, die aber sehr praktisch für Ihre Anwendung sind. Versuchen
+Sie auch mehrere Eigenschaften die berechnet sind in dem Objekt zu haben.
+
+Tauschen Sie die Aufgaben mit jemandem aus. Müssen jeweils alle berechneten
+Werte neu berechnet werden, wenn sich etwas ändert? Wie könnten Sie mit dem
+Problem umgehen?
+
+</Example>
+
+### Ansicht auf die Daten
+
+Das Redundanzproblem mit Daten wird noch ein Stück komplizierter, denn die
+Ansicht oder Präsentation der Daten, ist nicht das gleiche wie die Daten selber.
+Das Beispiel mit dem Alter macht das eigentlich schon sehr klar. Oft ist es gut
+das Alter zu wissen, aber die eigentliche Information steckt im Gebursdatum.
+Wenn wir das Alter mit in die Daten nehmen, sind wir redundant. Das ist bei der
+Präsentation von Daten aber oft erwünscht.
+
+<Example title="Beispiel: Einkaufsartikel mit Aktionen" classes="example">
+
+Wenn Sie einen Artikel einkaufen möchten, auf dem gerade eine Aktion ist, dann
+möchten Sie als Kunde möglichst viel Informationen sehen. Viele davon sind aber
+redundant und können einfach berechnet werden.
+
+```javascript
+{
+  "name": "Nussmischung",
+  "preis": 4.95,
+  "aktion": 0.2
+}
+```
+
+Diese Daten reichen völlig um alles zu berechnen dass Sie brauchen. Als Kunde
+ist es aber unpraktisch für Sie. Besser wäre das folgende Objekt.
+
+```javascript
+{
+   "name": "Nussmischung",
+   "preis": 4.95,
+   "aktion": 0.2,
+   "aktion_prozent": "20%",
+   "preis_reduziert": 3.96,
+   "preis_red_gerundet": 3.95,
+   "different": 1.00
+}
+```
+
+Sie als Kunde möchten gerne all die Informationen haben, ohne dass Sie diese
+jedesmal im Kopf berechnen müssen.
+
+</Example>
+
+Dafür werden die Daten für die Präsentation aufbereitet, und in dem Schritt mit
+neuen Informationen angereichert. Diese Fälle müssen wir unterscheiden können,
+denn diese Daten von dem Beispiel, möchten wir nicht speichern, dann können wir
+die Daten auch mit Redundanz anreichern.
+
+<Example title="Aufgabe: Wieso ist Redundanz schlecht?" classes="exercise">
+
+Finden Sie einige Gründe wieso Redundanz schlecht ist. Gibt es auch Situationen
+wo Redundanz gut ist, ausser beim anreichern von Informationen?
+
+</Example>
+
+### Single Point of Failure
+
+Redundanz in den Daten kann aber auch vor Datenverlust schützen. Zum Beispiel
+können Daten bei der Speicherung zerstörrt werden, oder bei der Übertragung über
+das Netzwerk. Wenn wir dort Redundanz in den Daten haben, dann können wir uns
+vor Verlust in den Daten schützen. Die erfordert jedoch Zusatzaufwand, denn wir
+müssen immer auf die Integrität der Daten testen. Das geht zwar schnell mit dem
+Computer, aber Sie möchten nicht jedesmal überlegen ob man die Daten jetzt
+nochmals prüfen müsste.
+
+<Example title="Aufgabe: Wo it Redundanz wichtig?" classes="exercise">
+
+Finden Sie ein Beispiel wo die Redundanz von Daten wichtig ist. Schreiben Sie
+auch gleich das Schema der Daten auf und diskutieren Sie es mit dem
+Banknachbarn.
+
+</Example>
+
+</Chapter>

@@ -1,0 +1,77 @@
+import { Link } from "react-router-dom"
+import Example from "../../components/Example.jsx"
+import Chapter from "../../components/Chapter.jsx"
+
+<Chapter>
+
+## Einführung in Javascript
+
+Javascript ist eine von sehr vielen Programmiersprachen. Javascript wird in der
+Webentwicklung verwendet, und ist dafür auch optimiert. Javascript kann in jedem
+modernen Webbrowser ausgeführt werden, es muss also nicht zusätzliches
+installiert werden, man kann es direkt so verwenden.
+
+Javascript wird verwendet um Webseiten interaktiv zu machen. Man kann es aber
+auch verwenden um die Logik auf einer Webseite zu steuern, man kann Daten von
+einer externen Quelle laden und analysieren, oder sogar ganze Spiele als
+Webseite entwickeln.
+
+### Javascript einbinden
+
+<section>
+
+Wie bereits bei `CSS` müssen wir auch das Javascript separat einbinden. Dafür
+fügen wir den folgenden Code im `<head>` von unserem `HTML` ein.
+
+```html
+<script src="script.js" defer></script>
+```
+
+Damit können wir den Code in der Datei `script.js` in der Webseite verwenden.
+
+</section>
+
+### Funktionen
+
+<section>
+
+**Funktionen** sind die Basisbausteine für ein Programm. In Javascript werden
+Funktionen zur Verfügung gestellt, die dann von der Webseite aufgerufen werden
+können.
+
+Funktionen können auch von anderen Funktionen aufgerufen werden, dadurch kann
+man Code einmal schreiben, und mehrfach verwenden.
+
+Wir erstellen eine erste Funktion die den Benutzer ganz einfach Grüssen soll.
+Dafür fügen wir den folgenden Code in der Datei `script.js` ein:
+
+```javascript
+function sayHello() {
+  alert("Hello World")
+}
+```
+
+Dies stellt der Webseite diese Funktion zur Verfügung, wir müssen die Funktion
+aber noch aufrufen, damit sie auch ausgeführt wird. Das machen wir mit dem
+folgenden `HTML` Code.
+
+```html
+<button onclick="sayHello()">Begrüssung ausführen</button>
+```
+
+So funktionieren alle Codes die wir erstellen. Wir erstellen eine Funktion, und
+rufen diese dann aus dem `HTML` auf.
+
+</section>
+
+<Example title="Aufgabe: Andere Begrüssung">
+  Erstellen Sie eine weitere Funktion um den Benutzer zu begrüssen. Erstellen
+  Sie auch für diese Funktion einen Button, um die Funktion auszuführen.
+</Example>
+
+<div className="btn-container right">
+  <Link className="btn" to="/javascript-change-page">
+    Weiter
+  </Link>
+</div>
+</Chapter>

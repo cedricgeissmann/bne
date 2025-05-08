@@ -1,0 +1,57 @@
+import Example from "../../components/Example.jsx"
+import Chapter from "../../components/Chapter.jsx"
+import { Link } from "react-router-dom"
+
+<Chapter>
+
+## Datentypen in Javascript
+
+In Javascript gibt es verschiedene Datentypen. Die beiden wichtigsten für uns
+sind im Moment `Text` und `Zahlen`. Es gibt noch eine genauere Unterscheidung,
+für uns reicht es aber zu wissen dass diese Beiden nicht gleich sind.
+
+### Rechnen in Javascript
+
+Javascript kann mit verschiedenen Datentypen rechnen, und verwendet dabei ganz
+normal das `+`-Zeichen. Wir können also ganz einfach `3 + 6` in Javascript
+ausrechnen lassen. Wir können auch mit den Werten von Variablen rechnen
+(`let a = 10; a + 19`).
+
+### Text addieren
+
+In Javascript können wir auch Text addieren `"Hello" + " " + "World"`. Das
+`+`-Zeichen, wird also für Text und Zahlen verwendet. Das heisst wir müssen
+aufpassen wenn wir in Javascript addieren. Ist ein Teil davon ein `Text`, dann
+wird einfach alles zusammen gehängt und es git keine normale Addition.
+
+Es ergibt daher Sinn, wenn wir Text zuerst in eine Zahl umwandeln lassen. Das
+ist immer dann nötig wenn wir ein Element aus dem HTML auslesen, denn alles was
+aus HTML kommt, wird als Text angesehen.
+
+<Example title="Beispiel: Text in Zahl umwandeln">
+Wir haben ein HTML-Element mit der ID `zahl`, darin steht eine
+7. Möchten wir nun diese 7 auslesen und 3 dazu addieren, können wir das
+mit dem folgenden Code machen.
+
+```javascript
+function plusThree() {
+  const numberElement = document.querySelector("#zahl")
+  let num = parseInt(numberElement.textContent)
+  num = num + 3
+  numberElement.textContent = num
+}
+```
+
+Mit `parseInt()` wird der Text als Zahl gelesen, und man kann dann damit ganz
+normal rechnen. Testen Sie mal was passiert wenn Sie diese Funktion weglassen.
+
+</Example>
+
+<div className="btn-container">
+  <Link className="btn" to="/javascript-change-page">
+    Zurück
+  </Link>
+  <span></span>
+</div>
+
+</Chapter>

@@ -1,0 +1,39 @@
+import{j as e,r as x}from"./index-B2qCcbtg.js";import{C as p}from"./Chapter-Bxzgta08.js";import{P as b,S as o,B as s,F as h}from"./Reveal-CWHqvlP7.js";import"./MatterScene-DRzgiPXu.js";import"./night-DSUKmcl1.js";function g({space:a}){return e.jsx("div",{style:{marginTop:a}})}function w(){const a=x.useRef(null);let n=null,r=null,i=null,d=null,t=null;x.useEffect(()=>{n=a.current,r=n.getContext("2d"),i={x:n.width/2,y:n.height/2,radius:10,speed:5,dx:0,dy:0},d={x:n.width-20,y:n.height/2-50,width:10,height:100,color:"white",score:0},t={x:10,y:n.height/2-50,width:10,height:100,color:"white",score:0},requestAnimationFrame(u)},[]);const c=[];document.addEventListener("keydown",function(l){c.includes(l.key)||c.push(l.key)}),document.addEventListener("keyup",function(l){c.includes(l.key)&&c.splice(c.indexOf(l.key),1)});function j(){r&&(r.beginPath(),r.arc(i.x,i.y,i.radius,0,Math.PI*2,!1),r.fillStyle="white",r.fill(),r.closePath(),r.beginPath(),r.rect(d.x,d.y,d.width,d.height),r.fillStyle=d.color,r.fill(),r.closePath(),r.beginPath(),r.rect(t.x,t.y,t.width,t.height),r.fillStyle=t.color,r.fill(),r.closePath())}function f(){i.x+=i.dx,i.y+=i.dy,(i.y+i.radius>n.height||i.y-i.radius<0)&&(i.dy=-i.dy),i.x+i.radius>d.x&&i.x-i.radius<d.x+d.width&&i.y+i.radius>d.y&&i.y-i.radius<d.y+d.height&&(i.dx=-i.dx,i.dx*=1.1),i.x+i.radius>t.x&&i.x-i.radius<t.x+t.width&&i.y+i.radius>t.y&&i.y-i.radius<t.y+t.height&&(i.dx=-i.dx,i.dx*=1.1),(i.x+i.radius>n.width||i.x-i.radius<0)&&(i.x-i.radius<0?(t.score++,document.getElementById("paddle2Score").innerHTML=t.score):(d.score++,document.getElementById("paddle1Score").innerHTML=d.score),i.x=n.width/2,i.y=n.height/2,i.dx=Math.random()*10-5,i.dy=Math.random()*10-5)}function u(){r!==null&&(r.clearRect(0,0,n.width,n.height),c.forEach(function(l){l==="e"?d.y-=10:l==="d"&&(d.y+=10),l==="q"?t.y-=10:l==="a"&&(t.y+=10),l==="s"&&(i.dx=Math.random()*10-5,i.dy=Math.random()*10-5)}),f(),j()),requestAnimationFrame(u)}return e.jsxs(e.Fragment,{children:[e.jsxs("div",{id:"scoreBoard",style:{color:"white",textAlign:"center",fontSize:"24px"},children:[e.jsx("span",{id:"paddle2Score",children:"0"})," : ",e.jsx("span",{id:"paddle1Score",children:"0"})]}),e.jsx("canvas",{style:{boxShadow:"0 0 3px white",border:"1px solid white",borderRadius:"5px"},ref:a,width:"800",height:"400"})]})}function m(a){const n={code:"code",h2:"h2",p:"p",pre:"pre",strong:"strong",...a.components};return e.jsxs(p,{children:[e.jsx(n.h2,{children:"Arbeiten mit KI"}),e.jsx(n.p,{children:`Seit der Erfindung von LLMs (Large Language Models) sind viele Aufgaben in der
+Schule deutlich einfacher geworden. Man kann gewisse Hausaufgaben sehr einfach
+von einer KI schreiben lassen, oder sogar ganze Aufsätze von einer KI erstellen
+lassen. Auch Code kann man relativ gut von einer KI erzeugen lassen.`}),e.jsx(n.p,{children:`Die KIs scheinen auch recht gut darin zu sein, grössere Codestücke zu schreiben.
+Hier ist jedoch Vorsicht geboten, denn Code, der von einer KI geschrieben wurde,
+hat keine Garantie auf Korrektheit.`}),e.jsx(n.p,{children:`Wir können die KI dennoch nutzen um uns zu helfen, wir sollten uns dabei einfach
+an einige Grundregeln halten.`}),e.jsx(g,{space:"2rem"}),e.jsxs(b,{children:[e.jsxs(o,{children:[e.jsx("h2",{children:"KI als Assistent"}),e.jsxs(s,{children:[e.jsx(h,{children:"Macht die Arbeit einfacher"}),e.jsx(h,{children:"Macht die Arbeit effizienter"}),e.jsx(h,{children:"Übernimmt monotone Aufgaben"}),e.jsx(h,{children:"Vereinfacht das Nachschlagen"}),e.jsx(h,{children:"Kann die Kreativität fördern"})]}),e.jsx(s,{children:"Jedoch nur wenn die KI richtig eingesetzt wird!"})]}),e.jsxs(o,{children:[e.jsx("h2",{children:"KI richtig einsetzen"}),e.jsx("h4",{children:"Gedanken umformulieren"}),e.jsxs(s,{children:[e.jsx(h,{children:e.jsx(n.pre,{children:e.jsx(n.code,{className:"language-text",children:`Wie kann ich alle e's aus einem Text löschen?
+`})})}),e.jsx(h,{children:e.jsx(n.p,{children:"Fragen Sie Codeium wie man diese Aufgabe lösen kann, die KI wird Ihnen dann sogar Code zur Lösung dazu geben."})})]}),e.jsx(s,{children:e.jsx(n.pre,{children:e.jsx(n.code,{className:"language-text",children:`Um alle "e"s aus einem Text zu löschen, kannst du die
+replace-Methode verwenden.
+`})})}),e.jsx(s,{children:e.jsx(n.p,{children:"Wenn Sie nicht verstehen wie das geht, oder es noch nicht in Ihr aktuelles Wissen passt, dann können Sie die KI auch nach einer anderen Formulierung der Aufgabe fragen."})}),e.jsx(s,{children:e.jsx(n.pre,{children:e.jsx(n.code,{className:"language-text",children:`Wie kann ich das mit schleifen machen?
+`})})}),e.jsx(s,{children:e.jsx(n.pre,{children:e.jsx(n.code,{className:"language-text",children:`Um alle "e"s aus einem Text mit einer Schleife
+zu entfernen, kannst du die einzelnen Zeichen 
+des Textes überprüfen und nur diejenigen 
+hinzufügen, die nicht "e" sind. 
+`})})}),e.jsx(s,{children:e.jsx(n.p,{children:"Sie können dann auch direkt nach dem Code fragen. Dabei sollten Sie dann aber die Programmiersprache angeben, in der Sie arbeiten."})}),e.jsx(s,{children:e.jsx(n.pre,{children:e.jsx(n.code,{className:"language-javascript",children:`let text = "Dies ist ein Beispieltext";
+let textWithoutE = "";
+for (let i = 0; i < text.length; i++) {
+    if (text[i] !== "e") {
+        textWithoutE += text[i];
+    }
+}
+console.log(textWithoutE);
+`})})}),e.jsx(s,{children:e.jsx(n.p,{children:"Dieser Code muss dann normalerweise noch an das eigene Projekt angepasst werden. Es kann jedoch eine gute Starthilfe sein."})})]}),e.jsxs(o,{children:[e.jsx("h2",{children:"Was muss man beachten?"}),e.jsx(s,{children:e.jsxs(n.p,{children:[e.jsx("h3",{children:"Wichtigste Regel"}),`
+Inhalt der von einer KI erzeugt wurde, darf nur nach kritischer Prüfung verwendet
+werden!`]})}),e.jsx(s,{children:"Wir müssen also Code lesen und korrigieren können."}),e.jsx(s,{children:e.jsxs(n.p,{children:[`Wir müssen immernoch selber Experte auf dem Gebiet sein, die KI macht nur
+`,e.jsx(n.strong,{children:"Vorschläge"}),"."]})})]}),e.jsxs(o,{children:[e.jsx("h2",{children:"Was bedeutet das für uns?"}),e.jsx(s,{children:e.jsx(n.p,{children:`Wir können die Probleme in natürlicher Sprache formulieren, und die KI
+erzeugt uns Lösungen.`})}),e.jsx(s,{children:e.jsx(n.p,{children:`Wir müssen das Problem in kleinere Stücke unterteilen, damit es von der KI
+gut gelöst werden kann.`})}),e.jsx(s,{children:e.jsxs(n.p,{children:[`Die KI kann das bearbeiten von Aufgaben erleichtern, das Lösen von komplexen
+Problemen bleibt aber bei `,e.jsx(n.strong,{children:"uns"}),"."]})})]}),e.jsxs(o,{children:[e.jsx("h2",{children:"Beispiel: Pong"}),e.jsx(s,{children:e.jsx(w,{})})]})]}),e.jsx(g,{space:"2rem"}),e.jsxs("section",{children:[e.jsx(n.p,{children:`Wir wissen nun also das wir die KI nutzen können und auch sollen, die Frage ist
+jetzt nur noch wie wir diesen Prozess möglichst einfach und effizient für uns
+machen.`}),e.jsxs(n.p,{children:[`Am besten geht es wenn wir die KI direkt in unserem Editor nutzen können. Dafür
+gibt es eine praktische Extension in VS Code - `,e.jsx(n.strong,{children:"Codeium"}),`. Um Codeium zu
+installieren können Sie einfach `,e.jsx(n.code,{children:"CTRL + P"}),` drücken und den folgenden Code
+eingeben:`]}),e.jsx(n.pre,{children:e.jsx(n.code,{className:"language-text",children:`ext install Codeium.codeium
+`})}),e.jsx(n.p,{children:`Sie müssen dann die Extension noch aktivieren und dabei einen Account bei
+Codeium erstellen. Wenn Sie damit fertig sind, bekommen Sie in Ihrem Editor
+direkt Vorschläge für Ihren Code.`}),e.jsx(n.p,{children:`Denken Sie daran das es extrem wichtig ist der Experte für das Projekt zu
+bleiben. Sie sollten also nur Änderungen von der KI annehmen die Sie auch
+wirklich verstehen.`})]})]})}function K(a={}){const{wrapper:n}=a.components||{};return n?e.jsx(n,{...a,children:e.jsx(m,{...a})}):m(a)}export{K as default};

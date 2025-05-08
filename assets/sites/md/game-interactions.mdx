@@ -1,0 +1,191 @@
+import Chapter from "../../components/Chapter"
+import Example from "../../components/Example"
+import Img from "../../components/Img"
+
+<Chapter>
+
+## Interaktives Spiel
+
+Damit ein Spiel auch Spass macht, soll es interaktiv sein. Das heisst der
+Spieler soll mit den Spielobjekten interagieren können. Also in unserem Spiel
+ist es so dass wenn ein Spieler auf eine Blume läuft, er diese dann einsammelt.
+Für das Spiel heisst das bis jetzt nur, dass die Blube einfach aus der Spielwelt
+entfernt wird, also das Spielobjekt wird zerstörrt. Wir können aber noch
+beliebige weitere Interaktionen ablaufen lassen nach so einer Kollision von 2
+Spielobjekten.
+
+### Spieler heilen
+
+Oftmals ist es in Spielen so dass ein Spieler Lebenspunkte hat. Wenn er in einen
+Gegner läuft, dann verliert er Lebenspunkte und muss sich später wieder heilen.
+Diese Interaktion möchten wir in unserem Spiel hinzufügen, was ganz einfach ist.
+Das meiste wird auch schon wieder von der Klasse `Base2DScene` gemacht, wir
+müssen das ganze nur noch erweitern.
+
+<Example title="Mit Blumen heilen">
+
+Der Code kann genau so aus dem Level 1 übernommen werden und auf die Datein vom
+Level 2 angepasst werden. Dann fügen wir ein paar neue Methoden ein, mit denen
+können wir überschreiben was passiert wenn 2 Objekte zusammenstossen.
+
+Überschreiben heisst das wir die Funktionalität aus der Basisklasse komplett
+ersetzen, oder diese zuerst machen und dann noch weitere Dinge ausführen. Das
+ist viel einfacher wie es klingt. Schauen Sie einfach die Kommentare in der
+Funktion `pickUp` an.
+
+```javascript
+import Base2DScene from "../base-2d-scene"
+
+export default class Level02 extends Base2DScene {
+  constructor() {
+    super({ key: "level-02" })
+  }
+
+  preload() {
+    this.load.tilemapTiledJSON(
+      "map-level-02",
+      "./assets/maps/map-level-02.json",
+    )
+  }
+
+  create() {
+    super.create("map-level-02")
+  }
+
+  // Diese Funktion existiert bereits in der `Base2DScene`-Klasse und wird
+  // hier von uns überschireben. Diese Funktion wird ausgeführt wenn der Spieler
+  // mit einem Spielobjekt eine Überlappug hat. Die Grundfunktion zerstörrt
+  // einfach das Spielobjekt, mehr passiert da nicht.
+  pickUp(actor, item) {
+    // Rufe die Grundfunktion auf, damit alles gleich bleibt wie in den anderen Levels.
+    super.pickUp(actor, item)
+
+    // Hier können wir weiteren Code einfügen, um den Spieler zu heilen.
+    this.player.hp = this.player.hp + 10
+  }
+}
+```
+
+Das ist eigentlich schon alles was wir machen müssen. Hier wäre es aber besser
+wenn wir die Eigenschaften auf dem Spieler nicht direkt verändern, sondern
+Methoden vom Spielerobjekt aufrufen die die gewünschten Eigenschaften verändern.
+Dann können weniger Fehler auftreten, wenn alles an einem zentralen Ort
+verwaltet wird.
+
+</Example>
+
+### Eigenschaften von Spielobjekten verändern
+
+Wie oben bereits erwähnt möchten wir die Eigenschaften von einem Spielobjekt
+nicht direkt von aussen verändern, um Fehler im Spiel minimieren zu können. Wenn
+ein Spielobjekt mehr Lebenspunkte erhalten soll, dann können wir dem Objekt die
+Methode `heal` geben, die können wir dann von aussen aufrufen. Dann kann sich
+das Spielobjekt selber darum kümmern ob es über seine maximale Lebenspunkte
+heilt oder nicht. Wenn das jedes andere Objekt machen soll, dann können schnell
+Fehler auftreten, weil das irgendwo vergessen geht. Wenn es aber das Spielobjekt
+selber macht, können wir die Logik einfach anpassen, und es ist für alle gleich.
+
+<Example title="Heilfunktion auf dem Spieler">
+
+Damit wir den Spieler heilen können, brauchen wir zuerst die Eigenschaft `hp`
+oder was ähnliches auf dem Spieler. Damit wir nicht zu viel heilen, brauchen wir
+auch sowas wie `maxHp`. Der Code unten zeigt wie Sie die Eigenschaften auf dem
+Spieler erstellen können, und diese in der `heal` Methode verwenden.
+
+Wir erweitern dazu den Spieler aus dem letzten Abschnitt, Sie brauchen also
+nicht allen Code zu kopieren, sondern müssen schauen wo die neuen Stücke
+hinkommen, und welche neu sind.
+
+```javascript
+import Phaser from "phaser"
+
+export default class Player extends Phaser.Physics.Arcade.Sprite {
+  // Hier werden die Eigenschaften festgelegt, wie sie dann in der ganzen
+  // Klasse verwendet werden können.
+  hp = 10
+  maxHp = 100
+  speed = 100
+
+  constructor(scene, x, y) {
+    super(scene, x, y, "player")
+    this.scene.add.existing(this)
+    this.scene.physics.add.existing(this, false)
+    this.body.collideWorldBounds = false
+    this.setOrigin(0.5, 0.5)
+    this.setSize(24, 24, false)
+    this.setOffset(4, 8)
+
+    this.setControls()
+  }
+
+  setControls() {
+    this.cursor = this.scene.input.keyboard.createCursorKeys()
+  }
+
+  update() {
+    const { body } = this
+    const { left, right, up, down } = this.cursor
+    let isIdle = true
+
+    this.body.setVelocityX(0)
+    this.body.setVelocityY(0)
+
+    if (left.isDown) {
+      body.setVelocityX(-this.speed)
+      if (isIdle) this.anims.play("player_left", true)
+      isIdle = false
+    }
+    if (right.isDown) {
+      this.body.setVelocityX(this.speed)
+      if (isIdle) this.anims.play("player_right", true)
+      isIdle = false
+    }
+
+    if (up.isDown) {
+      body.setVelocityY(-this.speed)
+      if (isIdle) this.anims.play("player_up", true)
+      isIdle = false
+    }
+    if (down.isDown) {
+      body.setVelocityY(this.speed)
+      if (isIdle) this.anims.play("player_down", true)
+      isIdle = false
+    }
+
+    if (isIdle) {
+      this.anims.play("player_idle", true)
+    }
+  }
+
+  // Das ist die Funktion die war nach aussen bereitstellen. Hier können
+  // wir an anderer Stelle im Code ganz einfach diese Funktion aufrufen,
+  // und der Spieler wird geheilt. Wir können hier auch sagen um wie viel
+  // ein Spieler geheilt werden soll.
+  heal(value) {
+    // Falls wir nichts übergeben haben, breche hier ab
+    if (value == null) return
+
+    // Hier rechnen wir den Wert auf die aktuellen Lebenspunkte
+    this.hp = this.hp + value
+
+    // Falls wir mehr Lebenspunkte wie das maximum haben, setzen wir die auf das
+    // Maximum.
+    if (this.hp > this.maxHp) {
+      this.hp = this.mapHp
+    }
+
+    console.log("HP: " + this.hp)
+  }
+}
+```
+
+Sehr ähnlich können wir jetzt auch mit Schaden umgehen, oder anderen Dingen wie
+die Geschwindigkeit erhöhen. Hier sind Ihnen eigentlich keine Grenzen gesetzt,
+Sie können hier machen was Sie möchten. Damit Sie den Überblick gut behalten
+können, lohnt es sich die Eigenschaften wirklich nur über solche Funktionen
+anzupassen, denn sonst wissen Sie plötzlich nicht mehr wer alles die
+Lebenspunkte des Spieler verändern darf.
+
+</Example>
+
+</Chapter>

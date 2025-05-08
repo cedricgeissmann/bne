@@ -1,0 +1,68 @@
+import Example from "../../components/Example.jsx"
+import Chapter from "../../components/Chapter.jsx"
+
+import LoopSimulator from "../../components/LoopSimulator.jsx"
+
+<Chapter>
+     
+## Schleifen in Javascript (`for`)
+
+Eine Aufgabe, die beim Programmieren immer wieder auftritt, ist das Iterieren
+über Listen, also das Durchgehen aller Elemente einer Liste. Häufig möchten wir
+dabei einzelne Elemente auslassen oder sie abändern. Dafür kann ein einfaches
+Schema verwendet werden:
+
+<Example title="Schema: Neue Liste erstellen">
+Es wird eine neue leere Liste erstellt. Anschließend wird jedes Element
+der alten Liste überprüft und entweder an die neue Liste angehängt oder
+modifiziert.
+
+```javascript
+// Nimmt eine Eingabe entgegen, und wandelt alle "a"s in "A"s um, und gibt dies zurück
+function aufgabe00(args) {
+  const input = args // liest die Eingabe der Funktion in eine Variable
+  const result = [] // erstellt eine neue leere Liste
+
+  for (let i = 0; i < input.length; i++) {
+    // iteriert über die Eingabe
+    const currentElement = input[i] // liest das aktuelle Zeichen der Eingabe aus
+
+    if (currentElement === "a") {
+      // prüft ob das aktuelle Zeichen ein "a" ist
+      result.push("A") // hängt das Zeichen "A" an die result-Liste hinten an
+    } else {
+      // wenn der Fall oben NICHT erfüllt ist
+      result.push(currentElement) // hängt das aktuelle Zeichen an die result-Liste hinten an
+    }
+  }
+
+  return result.join("") // wandelt die result-Liste in Text um, und gibt den Text zurück
+}
+```
+
+Mit dieser Struktur können Sie praktisch alles lösen, was mit dem Umwandeln von
+Text zu tun hat. Versuchen Sie zuerst intuitiv zu verstehen, was die einzelnen
+Teile des Codes machen, und bauen Sie sich mit der Zeit ein detailliertes
+Verständnis für jede Zeile in diesem Code-Stück auf.
+
+</Example>
+
+<section>
+
+## Visualisierung vom Schema: Neue Liste erstellen
+
+Wir können denn Code aus dem Beispiel von oben auch visualisieren. Bei dem
+Schema gehen Sie immer genau gleich vor. Sie erstellen eine neue leere Liste,
+und schreiben die alte ein Zeichen nach dem anderen ab. So können Sie für jedes
+Zeichen prüfen ob Sie dieses behalten möchten, oder mit einem anderen Zeichen
+ersetzen.
+
+Die Visualisierung hier, macht genau das Beispiel von oben, wo alle kleinen
+`a`'s mir grossen `A`'s ersetzt werden. Wenn Sie eine andere Eingabe untersuchen
+möchten, dann können Sie das einfach ändern.
+
+<LoopSimulator />
+
+</section>
+
+</Chapter>

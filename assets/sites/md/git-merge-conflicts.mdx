@@ -1,0 +1,88 @@
+import Chapter from "../../components/Chapter"
+import Example from "../../components/Example"
+import Video from "../../components/Video"
+
+<Chapter>
+
+## Merge Konflikte
+
+Merge Konflikte passieren wenn **Git** zwei `branches` nicht einfach
+zusammenführen kann. Das ist der Fall wenn in beiden{" "} `branches` Änderungen
+an den gleichen Codestellen (Zeilen) gemacht wurden. Diese müssen dann von Hand
+gelöst werden.
+
+**Git** schreibt bei einem `merge`-Konflikt die beiden Stellen in die Datei.
+Diese kann dann von Hand oder mit Hilfe des Editors gelöst werden. Meist reicht
+es aus wenn eine der beiden Versionen akzeptiert wird. Manchmal müssen aber noch
+Anpassungen gemacht werden.
+
+<Example title="Beispiel: Merge Konflikt im CSS">
+ 
+Nehmen wir an Sie haben 2 unterschiedliche Designs entwickelt und
+möchten nun Änderungen von beiden nehmen.
+
+`design-A` gibt Boxen eine leicht andere Hintergrundfarbe, einen Rand und einen
+Schatten. `design-B` verwendet abgerundete Ecken und einen dickeren Rand links
+und rechts.
+
+Die `style.css` Datei kann dann nach dem{" "}
+
+`merge`-Konflikt so aussehen.
+
+```css
+<<<<<<< HEAD
+padding: 10px 20px;
+background-color: rgb(248, 193, 163);
+font-weight: bold;
+letter-spacing: 1pt;
+text-align: center;
+box-shadow: 3px 1px 3px 2px darkgray;
+=======
+padding: 15px 20px;
+background-color: rgb(145, 166, 132);
+font-weight: bold;
+letter-spacing: 1pt;
+text-align: center;
+border-radius: 15px;
+border-left-width: 5px;
+border-right-width: 5px;
+>>>>>>> design-B
+```
+
+Sie müssen dann von Hand den Code anpassen, so das er am Ende so aussieht.
+
+```css
+padding: 15px 20px;
+background-color: rgb(145, 166, 132);
+font-weight: bold;
+letter-spacing: 1pt;
+text-align: center;
+box-shadow: 3px 5px 2px 2px rgb(50, 50, 50);
+border-radius: 15px;
+border-left-width: 5px;
+border-right-width: 5px;
+```
+
+Danach müssen Sie die Datei nur noch speichern und die Änderungen wieder zum
+neuen `commit` hinzufügen.
+
+</Example>
+
+Das folgende Video zeigt nochmals wie man einen solchen
+
+`merge`-Konflikt bearbeiten kann.
+
+<Video url="xloRotL7BPU" />
+
+<Example title="Aufgabe: Lösen Sie einen Merge-Konflikt">
+  Erstellen Sie 2 `branches` mit unterschiedlichen Designs. Fügen Sie die
+  `branches` zusammen und lösen Sie den `merge`-Konflikt.
+</Example>
+
+<Example title="Aufgabe: Merge-Konflikte an mehreren Stellen">
+  Erstellen Sie wieder 2 unterschiedliche `branches` und führen Sie diese
+  zusammen. Machen Sie Ihre Änderungen so, dass `merge` -Konflikte an mehreren
+  Stellen erscheinen.
+</Example>
+
+</Chapter>

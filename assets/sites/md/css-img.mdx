@@ -1,0 +1,105 @@
+import Chapter from "../../components/Chapter"
+import Example from "../../components/Example"
+import { Link } from "react-router-dom"
+
+import Video from "../../components/Video"
+
+<Chapter>
+
+## Mit Bildern umgehenzen
+
+Bilder werden in HTML wie Text behandelt, oder genauer gesagt wie
+
+_inline_ Elemente. Sie werden einfach in den Textfluss eingebaut, und die Zeile
+danach wird nicht umgebrochen. Möchten wir also ein Bild alleine und zentriert
+haben, müssen wir es in einen eigenen Container packen, und diesen dann
+gestalten.
+
+<Example title="Beispiel: Bild zentrieren">
+
+Um ein einzelnes Bild zu zentrieren, brauchen Sie zuerst die folgende HTML
+Struktur:
+
+```html
+<div class="img-center">
+  <img src="" />
+</div>
+```
+
+Dabei ist `div.img-center` das Element welches das Bild zentrieren wird. Wir
+bezeichnen dieses Element als den Container.
+
+Mit diesem HTML Code können wir dann den CSS Code angeben, der uns das
+gewünschte Design gibt. Dafür braucht es 2 Regeln, eine für den Container, und
+eine für die Breite des Bildes selber.
+
+```css
+.img-center {
+  text-align: center;
+}
+
+.img-center > img {
+  width: 70%;
+}
+```
+
+Die zweite Regel wird nicht unbedingt gebraucht, ist aber praktisch, wenn die
+Bilder nicht ganz so breit sein sollen wie der Text.
+
+</Example>
+
+### Rahmen zum Bild hinzufügen
+
+<section>
+
+Sie können dem Bild auch einen Rahmen geben. Dafür können Sie den folgenden Code
+bei `.img-center > img` hinzufügen:
+
+```css
+border: 1px solid black;
+padding: 2px;
+```
+
+</section>
+
+### Bilder abrunden
+
+<section>
+
+Bilderecken können auch abgerundet werden. Dadurch können spannende Bildformen
+erreicht werden. Mit dem folgenden Code können Sie die Ecken von einem Bild
+abrunden.
+
+```css
+.round-img {
+  border-radius: 25px;
+}
+```
+
+Spielen Sie etwas mit dem Wert herum, versuchen Sie auch einen Wert wie 2% oder
+50% aus.
+
+</section>
+
+<Example title="Beispiel: Abrundungseffekte aufheben">
+
+Wie Animationen funktionieren, können Sie{" "}
+
+<Link to="/css-animations">hier</Link> nochmals nachlesen. Dort wird erklärt wie
+Sie eine Transition erstellen.
+
+Um den Effekt zu erreichen, brauchen Sie den folgenden Code:
+
+```css
+.round-img:hover {
+  border-radius: 0;
+  transform: scale(1.2);
+}
+```
+
+Es ist durchaus möglich dass Sie den CSS Selektor anpassen müssen. Das hängt
+davon ab wie direkt Sie dem Code oben gefolgt sind.
+
+</Example>
+
+</Chapter>

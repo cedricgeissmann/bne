@@ -1,0 +1,99 @@
+import Chapter from "../../components/Chapter"
+import FiddleSVG from "../../components/FiddleSVG"
+import Example from "../../components/Example"
+
+<Chapter>
+
+## Weitere `SVG`-Elemente
+
+`SVG` bietet natürlich noch weitere Elemente wie nur den Kreis. Elemente die man
+häufig brauchen kann, sind `line`, `ellipse`, `rect`, `polygon` und `path`. Sie
+können auf [w3schools](https://www.w3schools.com/graphics/svg_intro.asp) und
+auf[mdn web docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Element)
+jeweils mehr zu den `SVG`-Elementen nachlesen. Wir schauen uns hier nur `rect`
+und `path` an.
+
+<Example title="Rechteck">
+
+Das `<rect>`-Element ist sehr selbsterklärend und kann am besten in einem
+Beispiel gezeigt werden. Die ganzen generellen **Attribute**, die Sie schon vom
+Kreis kennen, gelten natürlich noch immer (`fill`, `stroke` und `stroke-width`).
+Bei einem Rechteck können Sie jedoch nicht den Mittelpunkt angeben wie das beim
+Kreis der Fall ist, sondern Sie müssen die Koordinaten vom linken oberen
+Eckpunkt angeben, sowie die Höhe und die Breite.
+
+<FiddleSVG
+  svg={`<svg height="300" width="300">
+    <rect x="50" y="20" height="50" width="100" />
+</svg>`}
+/>
+
+### Aufgabe: Weiteres Rechteck hinzufügen
+
+Fügen Sie ein weiteres Rechteck hinzu, das nur einen blauen Rand hat und
+quadratisch ist. Der obere linke Eckpunkt soll auf dem unteren rechten Eckpunkt
+des anderen Rechtecks liegen.
+
+</Example>
+
+## Das `path`-Element
+
+<section>
+
+Das `path`-Element ist ein sehr flexibles Element, mit dem Sie fast alles
+zeichnen können. Leider ist es darum auch ein wenig komplexer wie die anderen
+Elemente. Die Komplexität kommt davon dass das `path`-Element eine eigene
+_Sprache_ verwendet, um den Pfad zu beschreiben. Diese Sprache ist sehr kurz
+gehalten und nicht immer sehr leserlich, sie ist jedoch nicht schwierig. Am
+besten ist es das ganze an einem Beispiel zu erklären.
+
+</section>
+
+<Example title="Aufgabe: Dreieck zeichnen mit einem Pfad">
+
+In `SVG` gibt es das Dreieck nicht als eigenes Element. Denn im Gegensatz zum
+Kreis und zum Rechteck, kann das Dreieck nicht so einfach generalisiert werden.
+Wir können aber Pfade verwenden um ein Dreieck zu zeichnen, da geben wir einfach
+die Punkte an die wir zeichnen möchten.
+
+<FiddleSVG
+  svg={`<svg height="300" width="300">
+    <path fill="transparent" stroke="green" stroke-width="5" d="M 100 100 L 200 100 L 150 200 Z"/>
+</svg>`}
+/>
+
+</Example>
+
+## Pfade lesen
+
+<section>
+
+Wie ist das ganze zu lesen? Das **Attribut** `d` beinhaltet die Daten des Pfads.
+In der einfachsten Form ist es immer als Triple zu lesen `(aktion x y)`. wir
+können also den Pfad von oben so aufteilen:
+
+- `M 100 100` - Bewege den Stift zum Punkt `100, 100`.
+- `L 200 100` - Zeichne vom aktuellen Punkt zum Punkt `200, 100`.
+- `L 150 200` - Zeichne vom aktuellen Punkt zum Punkt `150, 200`.
+- `Z` - Schliesse den Pfad, indem du zurück zum Startpunkt zeichnest.
+
+</section>
+
+<Example title="Aufgabe: Stern zeichnen">
+
+Verändern Sie den folgenden Pfad so, das es einen Stern gibt. Die Anzahl der
+Spitzen dürfen Sie selber bestimmen, es müssen aber mindestens 5 sein. Der Stern
+muss nicht ganz regelmässig sein.
+
+<FiddleSVG
+  svg={`<svg height="300" width="300">
+    <path fill="transparent" stroke="blue" stroke-width="5" d="M 100 200 L 200 200 L 150 100 Z"/>
+</svg>`}
+/>
+
+**Bonus:** Stellen Sie den Stern in zwei verschiedenen Farben dar. Am besten
+verwenden Sie 2 Pfade dafür.
+
+</Example>
+
+</Chapter>

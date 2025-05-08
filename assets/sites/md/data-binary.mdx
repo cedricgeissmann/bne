@@ -1,0 +1,136 @@
+import Chapter from "../../components/Chapter"
+import Example from "../../components/Example"
+import VSpace from "../../components/VSpace"
+import Katex from "../../components/Katex"
+
+import HexCell from "../../components/HexCell"
+import XORCell from "../../components/XORCell"
+
+<Chapter>
+
+## Binäre Daten
+
+<section>
+
+        Immer wenn Sie mit dem Computer zu tun haben, haben Sie indirekt mit
+        binären Daten zu tun. Der Computer selber kann Daten nur mit `0` und
+        `1` darstellen. Für uns als Menschen wird das sehr schnell viel zu
+        kompliziert und auch unübersichtlich, dafür sind dann weitere
+        Datenformate und Programmiersprachen erfunden worden.
+
+        Sie hatten indirekt schon mit dem Binärformat zu tun, als wir uns mit
+        dem ASCII-Code beschäftigt haben. Wir haben dort einfach nicht die
+        Binärdarstellung angeschaut, sondern die Dezimaldarstellung.
+
+</section>
+    
+    <Example title="Beispiel: ASCII-Code in verschiedenen Darstellungen">
+
+    In der folgenden Zelle finden Sie links ein Textfeld und rechts die
+    entsprechende Repräsentation im Binärformat. Ganz auf der rechten Seite
+    sehen Sie noch welche beiden Zeichen gerade im Binärformat dargestellt
+    werden. Sie können hier sehr einfach sehen dass das Binärformat extrem
+    schwierig zu lesen ist.
+
+    Testen Sie die anderen Formate und schauen Sie sich an ob Sie den
+    ASCII-Code wieder erkennen.
+
+    <HexCell />
+
+    Sie können den Text nach belieben ändern, um zu sehen wie die Daten im
+    Computerspeicher aussehen. Arbeiten Sie die folgenden Aufgaben durch:
+
+    1. Finden Sie heraus welchen Wert der Buchstabe `A` in allen Formaten hat.
+    1. Was fällt auf wenn Sie die Buchstaben `A` und `a` im Binär-, Oktal- und
+       Hexadezimalsystem anschauen?
+    1. Was fällt Ihnen auf wenn Sie `abcdef` im Binärformat anschauen?
+    1. Was passiert wenn Sie einen Leerschlag eingeben?
+    1. Was passiert wenn Sie einen Zeilenumbruch eingeben?
+    1. Geben Sie ein kleines Objekt im JSON-format ein. Was können Sie jeweils
+       in den verschiedenen Formaten beobachten?
+
+    </Example>
+
+    <section>
+
+    ### Wieso Binärcode?
+
+    Der Binärcode scheint extrem unübersichtlich zu sein, und somit zu nichts
+    zu gebrauchen, zumindest wenn wir den Binärcode direkt anschauen. Aber es
+    gibt Verwendungszwecke wo wir den Binärcode direkt brauchen, und er sogar
+    *übersichtlicher* ist. Das ist in vor allem in der Verschlüsselung.
+
+    Moderne Verschlüsselungsverfahren verwenden jeweils die XOR-Operation
+    zusammen mit einem Schlüssel. Dann wird jedes `Bit` im Klartext und im
+    Schlüssel mit der XOR-Operation verrechnet, und ergibt dann das `Bit` im
+    Ciphertext. Moderne Verschlüsselungsverfahren verwenden natürlic noch mehr
+    Tricks, aber dies ist ein einfaches Beispiel für die XOR-Operation und
+    wieso dass Binärcode *praktisch* ist.
+
+    </section>
+
+    <Example title="Beispiel: Verschlüsseln mit der XOR-Operation">
+
+    In dem folgenden Beispiel werden die Zeichenketten jeweils in ASCII
+    übersetzt, und dann im Binärformat dargestellt. Die dritte Zeile ist die
+    XOR-Operation der beiden ersten, das Resultat wird dann wieder in eine
+    Zeichenkette übersetzt und dargestellt.
+
+    Es ist an dem Beispiel einfach zu erkennen das es nicht möglich ist die
+    Verschlüsselung ohne Schlüssel zu knacken, da verschiedene Zeichen aus der
+    Eingabe, auf die gleiche Ausgabe geschickt werden. Das bedeutet dass Sie
+    die Verschlüsselung nur mit dem Schlüssel aufheben können.
+
+    <XORCell />
+
+    Nutzen Sie das Widget um die folgenden Fragen zu beantworten.
+
+    1. Was genau macht die XOR-Operation?
+    1. Was passiert wenn Sie den gleichen Schlüssel wie die Eingabe verwenden?
+    1. Was passiert wenn Sie mehrere Leerzeichen als Schlüssel verwenden? Wieso
+       passiert das?
+    1. Was passiert wenn Sie die gleichen Buchstaben im Schlüssel und in der
+       Eingabe verwenden, aber jeweils in der Klein- bzw. Grossbuchstabenform.
+    1. Können Sie die Eingabe und den Schlüssel so wählen, dass `0123456789`
+       herauskommt?
+    1. Wie können Sie die Verschlüsselung rückgängig machen?
+    1. Was ist ein schlechter Schlüssel für diese Art der Verschlüsselung und
+       wieso?
+    1. Wieso ist diese Art der Verschlüsselung praktisch für den Computer?
+    
+    </Example>
+
+    <section>
+
+### Vom Binär ins Dezimalsystem umrechnen
+
+    Das Binärsystem funktioniert zur Basis 2 statt wie gewohnt zur Basis 10.
+    Die Umrechnung vom Binär- zum Dezimalsystem ist sehr simpel, Sie können
+    diesem Schema folgen.
+
+    Jede Stelle im Binärsystem ist eine Ziffer mit dem Wert `0` oder `1`. Sie
+    multiplizieren dann jede Ziffer mit der jeweiligen Stelle
+
+    <div style={{display:"flex", justifyContent: "center"}}>
+    <Katex>
+    {String.raw`{1001} \rightarrow 1 \cdot 2^3 + 0 \cdot 2^2 + 0 \cdot 2^1 + 1
+    \cdot 2^0 = 9` }
+    </Katex>
+    </div>
+
+    Berechnen Sie die jeweiligen dezimaldarstellungen von den gegebenen
+    Binärzahlen:
+
+    1. `10010`
+    1. `11010`
+    1. `10011`
+    1. `10100`
+    1. `110110`
+
+    Können Sie das auch in die andere Richtung berechnen? Suchen Sie einen Weg
+    wie man das umkehren kann.
+
+    </section>
+
+</Chapter>
+

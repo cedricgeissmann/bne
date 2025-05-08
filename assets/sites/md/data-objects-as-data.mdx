@@ -1,0 +1,59 @@
+import Chapter from "../../components/Chapter"
+import Example from "../../components/Example"
+import VSpace from "../../components/VSpace"
+import Presentation, {
+  Slide,
+  Basement,
+  Fragment,
+} from "../../components/Reveal"
+
+<Chapter>
+
+## `JSON` als Datenquelle
+
+<section>
+
+        Viele Daten sind im `JSON`-format verfügbar. Aber was können wir damit
+        machen? Wir können die Daten auf einer Webseite darstellen lassen.
+        Überlegen Sie sich einmal wie ein Webshop funktionieren könnte. Sie
+        greifen über eine Webseite darauf zu, jedoch wird wohl kaum jemand von
+        Hand die ganze Webseite geschrieben haben, wo alle Artikel drin sind,
+        die in dem Shop verkauft werden. In der Realität ist es so das man eine
+        Art Vorlage schreibt, die dann mit den Daten aus dem `JSON` ergänzt
+        werden. So können die Daten in einer Datenbank gespeichert werden, oder
+        wie in unserem Fall, einfach als `JSON`-Datei abgelegt werden.
+
+</section>
+
+<Example title="Vorlage mit Daten erstellen">
+
+        Wir möchten eine Vorlage erstellen, und diese dann mit den Daten aus
+        dem `JSON` füttern. Das folgende Codestück definiert einen Artikel und
+        packt diesen dann in eine `HTML`-Vorlage.
+
+        ```javascript
+        const article = {
+          name: "Apple",
+          price: 2.50,
+          description: "An apple a day keeps the doctor away",
+        }
+
+        const template = `
+          <div class="article">
+            <h3>${article.name}</h3>
+            <p class="description">${article.description}</p>
+            <p class="price">${article.price}</p>
+          </article>
+        `
+
+        document.querySelector("#articles").innerHTML = template
+        ```
+
+        Wenn wir nun noch Schleifen und Listen verwenden, können wir ganz
+        einfach mehrere Artikel in unser Dokument schreiben.
+
+</Example>
+
+
+</Chapter>
+

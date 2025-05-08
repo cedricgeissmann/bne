@@ -1,0 +1,140 @@
+import Example from "../../components/Example.jsx"
+import Chapter from "../../components/Chapter.jsx"
+
+<Chapter>
+## Code-Blöcke und Scoping
+
+Beim Programmieren wird der ganze Code in kleine Abschnitte aufgeteilt. Diese
+Abschnitte nennt man Code-Blöcke oder manchmal hört man das Wort Scoping.
+Code-Blöcke sind ein sehr wichtiges Strukturierungselement, denn sie ermöglichen
+es Codeteile mehrfach auszuführen, oder einen Teil statt einen anderen
+auszuführen. Code-Blöcke haben auch die Eigenschaft, dass Variablen ausserhalb
+von den Code-Blöcken nicht verfügbar sind. Das ist zum einen sehr gut, denn wir
+können nicht ausversehen an einer anderen Stelle im Code eine Variable
+überschreiben, zum anderen kann es das Leben auch schwieriger machen, wenn wir
+eine Variable mit einem anderen Stück Code teilen möchten.
+
+<Example title="Einfach nur ein Block">
+
+Wenn wir ein Stück Code isolieren möchten, dann können wir den Code einfach in
+`{}`-Klammern schreiben. Damit ist alles was in diesen `{}`-Klammern steht so
+abgeschirmt, dass es nicht nach aussen gelangt. Wir können aber Variablen von
+ausserhalb verwenden.
+
+```javascript
+const outside = "Ich bin nicht im Block"
+{
+  const inside = "Ich bin im Block"
+  console.log(outside) // Das geht, weil die Variable vor dem Block definiert wurde, und darum auch innerhalb verfügbar ist.
+  console.log(inside)
+}
+console.log(outside)
+console.log(inside) // Hier wird ein Fehler passieren, da die Variable nicht mehr existiert.
+```
+
+Der Code gibt einen Fehler wenn er so ausgeführt wird, denn die letzte Zeile
+geht so nicht, da die Variable nicht mehr existiert.
+
+</Example>
+
+## Lebenszeit von Variablen
+
+Das was Sie im letzten Beispiel gesehen haben, kennt man auch als Lebenszeit von
+Variablen. Eine Variable lebt, solange sie innerhalb von ihrem Codeblock ist,
+oder einem Codeblock der darin liegt. Am Ende eines Codeblocks ist die
+Lebenszeit einer Variable beendet, man sagt dazu auch, dass die Variable **out
+of Socpe** geht. Damit "stirbt" die Variable und kann nicht länger verwendet
+werden. Das kann bei Schleifen ein häufiger Fehler sein.
+
+## Funktionen als Codeblöcke verstehen
+
+Alles was in `{}`-Klammern steht, ist ein Codeblock. Funktionen haben auch einen
+solchen Codeblock, dieser gibt an welcher Code ausgeführt wird, wenn eine
+Funktion aufgerufen wird. Da Klammern ein häufiger Fehler sind, ist es wichtig
+dass Sie dieses Konzept verstehen.
+
+<Example title="Eine einfache Funktion">
+
+Wir können einem Codeblock einen Namen geben, damit wir ihn später aufrufen
+können. Dieses Konstrukt nennt man eine Funktion.
+
+```javascript
+function greet() {
+  const greeting = "Hello World!"
+  console.log(greeting)
+}
+```
+
+Dieses Stück Code definiert einen Block unter dem Namen `greet`, den können wir
+später dann mit `greet()` ausführen lassen. Da wird einfach der Code ausgeführt
+der in den `{}`-Klammern steht.
+
+</Example>
+
+## Weitere Codeblöcke
+
+<section>
+
+Es gibt neben Funktionen noch Bedingungen und Schleifen, diese funktionieren
+auch mit Codeblöcken.
+
+Wenn wir von Bedingungen / Verzeigungen sprechen, dann geht es darum den einen
+oder den anderen Codeblock auszuführen, wenn wir also in Blöcken denken, können
+wir den `true`- und `false`-Block definieren, und dann auswählen aufgrund einer
+Bedingung.
+
+```javascript
+const a = 10
+if (a < 5) {
+  // true-Block
+  console.log("Wahr, a ist kleiner als 5.")
+} else {
+  // false-Block
+  console.log("Falsch, b ist NICHT kleiner als 5.")
+}
+```
+
+Sie sehen auch hier wieder, dass der Code in `{}`-Blöcken organisiert ist. Vor
+dem ersten Block steht dann eine Anweisung, wie mit diesen Blöcken umzugehen
+ist. Mit dem `if` sagen Sie dass eine Verzweigung kommt, dass was dahinter in
+`()`-Klammern steht, ist die Bedingung ob der erste Codeblock ausgeführt wird,
+oder nicht.
+
+</section>
+
+## Schleifen als weitere Codeblöcke
+
+<section>
+
+Sie haben im Code auch schon die `for`-Schleife gesehen. Auch hier wird wieder
+ein Codeblock verwendet, der dann mehrfach ausgeführt wird. Wir können zum
+Beispiel ganze einfach die Summe aller Zahlen von 0 bis 10 berechnen.
+
+```javascript
+let sum = 0
+for (let i = 0; i < 10; i++) {
+  // Schleifenblock
+  sum = sum + i
+}
+```
+
+Auch hier ist der Code, der mehrfach ausgeführt wird, wieder in einem Block.
+Solange Sie also in diesen Blöcken denken, ist es relativ einfach den Code zu
+strukturieren, und Sie machen auch viel weniger Klammerfehler.
+
+</section>
+
+## Unnötige Codeblöcke
+
+<section>
+
+Wie Sie ganz am Anfang gesehen haben, kann man einen Codeblock, ohne etwas dazu
+verwenden. Das wird super selten (fast nie) gemacht, denn viele Klammern machen
+den Code unleserlich. Sie sollen es aber verwenden, um Ihre Gedanken in Blöcke
+zu teilen. Alles was unnötig ist, kann man am Ende wieder löschen. Die Blöcke
+zusammen mit einem Kommentar, helfen die Aufgaben in kleinere Teile zu
+unterteilen.
+
+</section>
+
+</Chapter>

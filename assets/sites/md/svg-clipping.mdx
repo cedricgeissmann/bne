@@ -1,0 +1,91 @@
+import Chapter from "../../components/Chapter"
+import FiddleSVG from "../../components/FiddleSVG"
+import Example from "../../components/Example"
+
+<Chapter>
+
+## Clipping
+
+<section>
+
+**Clipping** ist eine Methode wo man nur einen Teil des Bildes darstellt, und
+den Rest versteckt. Die Methode wird sehr oft bei Profilbildern verwendet, wo
+das Bild mit einem Kreis überlagert wird, und aber nur der Teil angezeigt wird
+der innerhalb des Kreises liegt. Man sagt dazu manchmal auch **masking**. Das
+wird aber mehr bei Rastergrafiken verwendet, weil die Maske dort sagt, welche
+Pixel gezeichnet werden und welche nicht. Bei `SVG`, also ebi Vektorgrafiken,
+wird geometrisch bestimmt was gezeichnet wird, deshalb spricht man dort von
+**clipping**.
+
+Aber wie funktioniert **clipping** überhaupt. Das ist ganz einfach. Wir können
+ein Element vorgeben, das wir dann als `clip-path` in einem anderen Element
+verwenden.
+
+</section>
+
+<Example title="Clipping mit einem Kreis">
+
+Wir definieren unsere Zeichenfläche als einen Kreis. Das können wir mit dem
+`clipPath`-Element erreichen. Dann erstellen wir ein Rechteck innerhalb von
+diesem Kreis, und geben diesem Kreis das `clip-path`-Attribut. DAfür müssen wir
+die ID von dem `clipPath`-Element verwenden.
+
+<FiddleSVG
+  svg={`<svg height="300" width="300">
+    <clipPath id="clip-circle">
+      <circle cx="150" cy="150" r="145" />
+    </clipPath>
+    <rect x="50" y="100" width="300" height="200"
+    clip-path="url(#clip-circle)">
+</svg>`}
+/>
+
+### Aufgabe: Weitere Elemente hinzufügen
+
+Fügen Sie mindestens 2 weitere Elemente hinzu. Eines davon soll auch von dem
+`clipPath`-Element eingeschrängt werden, das andere soll frei gezeichnet werden
+können.
+
+</Example>
+
+## Elemente vordefinieren
+
+<section>
+
+Wie Sie beim **clipping** bereits gesehen haben, gibt es Elemente die wir
+verwenden möchten, aber nicht unbedingt zeichnen. Diese Technik kann auch
+verwendet werden, um Elemente zu definieren, und diese dann in geänderter Form
+zeichnen lassen. Zum Beispiel wäre es praktisch ein Dreieck zu definieren, das
+wir in anderen Farben, Grössen und Rotationen wiederverwenden können.
+
+Dafür brauchen wir 2 weitere `SVG`-Elemente. Das `defs`-Element um die Elemente
+zu definieren, aber nicht zu zeichenen, und das `use`-Element, mit dem wir ein
+definiertes Element angeben können, dass dann gezeichnet wird.
+
+</section>
+
+<Example title="Dreiecke vordefinieren">
+
+Hier werden wir ein Dreieck mit einem `defs`-Element beschreiben, und dieses
+dann in verschiedenen Formen zeichnen.
+
+<FiddleSVG
+  svg={`<svg height="300" width="300">
+    <defs>
+      <path id="triangle" fill="transparent"
+      d="M 0 0 L 100 0 L 50 100 Z" />
+    </defs>
+    <use href="#triangle" stroke="red" />
+    <use href="#triangle" x="100" y="100" stroke="green" />
+    <use href="#triangle" transform="translate(100, 100) rotate(180)" stroke="blue" />
+</svg>`}
+/>
+
+### Aufgabe: Mehr Dreiecke
+
+Erstellen Sie mindestens 4 weitere Dreiecke, und testen Sie was `x` und `y`
+machen, und was `transform` macht.
+
+</Example>
+
+</Chapter>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="320"
+   height="180"
+   viewBox="0 0 320 180"
+   role="img"
+   aria-label="Server Client Model Diagram"
+   version="1.1"
+   id="svg9"
+   sodipodi:docname="server-client-diagram.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview9"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.8344988"
+     inkscape:cx="149.08704"
+     inkscape:cy="158.89898"
+     inkscape:window-width="1876"
+     inkscape:window-height="1122"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg9" />
+  <defs
+     id="defs1">
+    <marker
+       id="arrowhead"
+       markerWidth="10"
+       markerHeight="7"
+       refX="10"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#999"
+         id="polygon1" />
+    </marker>
+    <filter
+       id="serverHighlight"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       color-interpolation-filters="sRGB">
+      <feDropShadow
+         dx="0"
+         dy="0"
+         stdDeviation="3"
+         flood-color="#50E3C2"
+         flood-opacity="1" />
+    </filter>
+    <filter
+       id="clientHighlight"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       color-interpolation-filters="sRGB">
+      <feDropShadow
+         dx="0"
+         dy="0"
+         stdDeviation="3"
+         flood-color="#4A90E2"
+         flood-opacity="1" />
+    </filter>
+  </defs>
+  <!-- Client Group -->
+  <g
+     id="client"
+     filter="url(#clientHighlight)">
+    <rect
+       x="20"
+       y="90"
+       width="100"
+       height="30"
+       fill="#4A90E2"
+       rx="8"
+       ry="8"
+       id="rect1" />
+    <rect
+       x="25"
+       y="95"
+       width="90"
+       height="20"
+       fill="#2C6CC4"
+       rx="4"
+       ry="4"
+       id="rect2" />
+    <rect
+       x="30"
+       y="40"
+       width="80"
+       height="50"
+       fill="#2C6CC4"
+       rx="6"
+       ry="6"
+       id="rect3" />
+    <text
+       x="70"
+       y="30"
+       fill="white"
+       font-size="18"
+       font-weight="bold"
+       font-family="Arial"
+       text-anchor="middle"
+       alignment-baseline="middle"
+       id="text3">
+      Client
+    </text>
+  </g>
+  <!-- Server Group -->
+  <!-- Request Line -->
+  <line
+     x1="120"
+     y1="70"
+     x2="220"
+     y2="70"
+     stroke="#999"
+     stroke-width="3"
+     marker-end="url(#arrowhead)"
+     id="line7" />
+  <text
+     x="170"
+     y="55"
+     fill="#999"
+     font-size="14"
+     font-family="Arial"
+     text-anchor="middle"
+     id="text8">
+    Request
+  </text>
+  <!-- Response Line -->
+  <line
+     x1="220"
+     y1="90"
+     x2="120"
+     y2="90"
+     stroke="#999"
+     stroke-width="3"
+     marker-end="url(#arrowhead)"
+     id="line8" />
+  <g
+     id="server"
+     filter="url(#serverHighlight)"
+     style="display:inline">
+    <rect
+       x="220"
+       y="40"
+       width="60"
+       height="80"
+       fill="#50e3c2"
+       rx="8"
+       ry="8"
+       id="rect4" />
+    <rect
+       x="230"
+       y="50"
+       width="40"
+       height="10"
+       fill="#3cbfae"
+       rx="2"
+       ry="2"
+       id="rect5" />
+    <rect
+       x="230"
+       y="65"
+       width="40"
+       height="10"
+       fill="#3cbfae"
+       rx="2"
+       ry="2"
+       id="rect6" />
+    <rect
+       x="230"
+       y="80"
+       width="40"
+       height="10"
+       fill="#3cbfae"
+       rx="2"
+       ry="2"
+       id="rect7" />
+    <text
+       x="250"
+       y="30"
+       fill="#ffffff"
+       font-size="18px"
+       font-weight="bold"
+       font-family="Arial"
+       text-anchor="middle"
+       alignment-baseline="middle"
+       id="text7">Server</text>
+  </g>
+  <text
+     x="170"
+     y="110"
+     fill="#999"
+     font-size="14"
+     font-family="Arial"
+     text-anchor="middle"
+     id="text9">
+    Response
+  </text>
+  <!-- Packet -->
+  <rect
+     id="packet"
+     x="110"
+     y="60"
+     width="20"
+     height="20"
+     fill="#FF6F61"
+     rx="4"
+     ry="4">
+    <animate
+        attributeName="fill"
+        values="#FF6F61;#FF6F61;transparent;transparent"
+        keyTimes="0;0.1666;0.1667;1"
+        dur="6s"
+        repeatCount="indefinite" />
+    <animate
+       attributeName="x"
+       values="120;220;220;120;120"
+       keyTimes="0;0.0417;0.125;0.1667;1"
+       dur="6s"
+       repeatCount="indefinite" />
+    <animate
+       attributeName="y"
+       values="60;60;80;80;60"
+       keyTimes="0;0.0417;0.125;0.1667;1"
+       dur="6s"
+       repeatCount="indefinite" />
+  </rect>
+  <!-- Client Highlight Animation -->
+  <animate
+     xlink:href="#client"
+     attributeName="filter"
+     values="none;none;none;url(#clientHighlight);none"
+     keyTimes="0;0.25;0.5;0.75;1"
+     dur="6s"
+     repeatCount="indefinite" />
+  <!-- Server Highlight Animation -->
+  <animate
+     xlink:href="#server"
+     attributeName="filter"
+     values="none;url(#serverHighlight);none;none;none"
+     keyTimes="0;0.125;0.25;0.5;1"
+     dur="6s"
+     repeatCount="indefinite" />
+</svg>

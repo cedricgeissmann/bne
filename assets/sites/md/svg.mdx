@@ -1,0 +1,71 @@
+import Chapter from "../../components/Chapter"
+import FiddleSVG from "../../components/FiddleSVG"
+import Example from "../../components/Example"
+
+<Chapter>
+
+## Vektorgrafiken mit SVG
+
+In der Informatik unterscheidet man zwischen 2 arten von Bildern. Zum einen gibt
+es Vektorgrafiken, bei denen man die Abbildung mithilfe von Mathematik
+beschriebt. Die andere Art von Bildern nennt man Rastergrafiken, dort wird das
+Bild Pixel für Pixel beschrieben. Wir beschäftigen uns mit Vektorgrafiken, da
+wir so komplexere Bilder einfach beschreiben und zusammensetzen können.
+
+<Example title="Kreis">
+
+Wir können zum Beispiel ein Bild mit einem Kreis wie folgt beschreiben:
+
+<FiddleSVG
+  svg={`<svg height="300" width="300">
+    <circle cx="150" cy="150" r="50" />
+</svg>`}
+/>
+
+Zunächst müssen wir das Koordinatensystem des Bildes beschreiben. Hierfür
+erstellen wir ein `SVG`-Element und legen die Höhe und Breite fest.
+
+Das Bild hat eine Höhe und eine Breite von 300 Einheiten. Der Kreis hat den
+Mittelpunkt genau in der Mitte des Bildes, mit `cx="150"` und `cy="150"`. Der
+Radius wird mit dem **Attribut** `r` angegeben.
+
+### Aufgabe: Kreis verschieben
+
+Verändern Sie den Mittelpunkt und den Radius des Kreises so, das nur der obere
+linke Teil des Viertelkreises zu sehen ist.
+
+</Example>
+
+## Mehrere Elemente in einem SVG
+
+<section>
+
+Im oberen Beispiel haben wir nur einen Kreis gezeichnet. Wir können aber auch
+mehrere Elemente in ein Bild nehmen. Dazu können wir ganz einfach wie in `HTML`
+mehrere Elemente in das gleiche `SVG`-Element schreiben. Damit wir die Elemente
+auch gut unterscheiden können, möchten wir verschiedene Farben dafür verwenden.
+
+In SVG werden alle Eigenschaften von einem Objekt als **Attribute** angegeben.
+Wenn wir eine Füllfarbe festlegen möchten, können wir das mit dem **Attribut**
+`fill` machen.
+
+</section>
+
+<Example title="Aufgabe: Olympische Ringe">
+
+Es gibt neben `fill` auch `stroke` und `stroke-width`. Versuchen Sie damit die
+olymischen Ringe zu zeichnen.
+
+<FiddleSVG
+  svg={`<svg height="300" width="300">
+    <circle cx="100" cy="150" r="40" fill="blue"/>
+    <circle cx="200" cy="150" r="40" fill="green"/>
+</svg>`}
+/>
+
+**Tipp**: Wenn Sie möchten das ein Ring nicht ausgefüllt wird, dann können Sie
+`fill="transparent"` verwenden.
+
+</Example>
+
+</Chapter>

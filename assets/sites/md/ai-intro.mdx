@@ -1,0 +1,168 @@
+import Chapter from "../../components/Chapter"
+import Example from "../../components/Example"
+import VSpace from "../../components/VSpace"
+import Presentation, {
+  Slide,
+  Basement,
+  Fragment,
+} from "../../components/Reveal"
+
+import Matter from "../../components/Matter"
+import RPlayer from "../../components/Remotion"
+import Outro from "../../components/videos/Outro"
+
+import Pong from "../../examples/Pong"
+
+<Chapter>
+
+## Arbeiten mit KI
+
+Seit der Erfindung von LLMs (Large Language Models) sind viele Aufgaben in der
+Schule deutlich einfacher geworden. Man kann gewisse Hausaufgaben sehr einfach
+von einer KI schreiben lassen, oder sogar ganze Aufsätze von einer KI erstellen
+lassen. Auch Code kann man relativ gut von einer KI erzeugen lassen.
+
+Die KIs scheinen auch recht gut darin zu sein, grössere Codestücke zu schreiben.
+Hier ist jedoch Vorsicht geboten, denn Code, der von einer KI geschrieben wurde,
+hat keine Garantie auf Korrektheit.
+
+Wir können die KI dennoch nutzen um uns zu helfen, wir sollten uns dabei einfach
+an einige Grundregeln halten.
+
+<VSpace space="2rem" />
+
+<Presentation>
+<Slide>
+<h2>KI als Assistent</h2>
+<Basement>
+    <Fragment>Macht die Arbeit einfacher</Fragment>
+    <Fragment>Macht die Arbeit effizienter</Fragment>
+    <Fragment>Übernimmt monotone Aufgaben</Fragment>
+    <Fragment>Vereinfacht das Nachschlagen</Fragment>
+    <Fragment>Kann die Kreativität fördern</Fragment>
+</Basement>
+<Basement>Jedoch nur wenn die KI richtig eingesetzt wird!</Basement>
+</Slide>
+<Slide>
+<h2>KI richtig einsetzen</h2>
+<h4>Gedanken umformulieren</h4>
+<Basement>
+    <Fragment>
+    ```text
+    Wie kann ich alle e's aus einem Text löschen?
+    ```
+    </Fragment>
+    <Fragment>
+    Fragen Sie Codeium wie man diese Aufgabe lösen kann, die KI wird Ihnen dann sogar Code zur Lösung dazu geben.
+    </Fragment>
+</Basement>
+<Basement>      
+```text
+Um alle "e"s aus einem Text zu löschen, kannst du die
+replace-Methode verwenden.
+```
+</Basement>
+<Basement>
+    Wenn Sie nicht verstehen wie das geht, oder es noch nicht in Ihr aktuelles Wissen passt, dann können Sie die KI auch nach einer anderen Formulierung der Aufgabe fragen.
+</Basement>
+<Basement>
+```text
+Wie kann ich das mit schleifen machen?
+```
+</Basement>
+<Basement>
+```text
+Um alle "e"s aus einem Text mit einer Schleife
+zu entfernen, kannst du die einzelnen Zeichen 
+des Textes überprüfen und nur diejenigen 
+hinzufügen, die nicht "e" sind. 
+```
+</Basement>
+<Basement>
+    Sie können dann auch direkt nach dem Code fragen. Dabei sollten Sie dann aber die Programmiersprache angeben, in der Sie arbeiten.
+</Basement>
+<Basement>
+```javascript
+let text = "Dies ist ein Beispieltext";
+let textWithoutE = "";
+for (let i = 0; i < text.length; i++) {
+    if (text[i] !== "e") {
+        textWithoutE += text[i];
+    }
+}
+console.log(textWithoutE);
+```
+</Basement>
+<Basement>
+    Dieser Code muss dann normalerweise noch an das eigene Projekt angepasst werden. Es kann jedoch eine gute Starthilfe sein.
+</Basement>
+</Slide>
+
+<Slide>
+  <h2>Was muss man beachten?</h2>
+  <Basement>
+    <h3>Wichtigste Regel</h3>
+    Inhalt der von einer KI erzeugt wurde, darf nur nach kritischer Prüfung verwendet
+    werden!
+  </Basement>
+  <Basement>Wir müssen also Code lesen und korrigieren können.</Basement>
+  <Basement>
+    Wir müssen immernoch selber Experte auf dem Gebiet sein, die KI macht nur
+    **Vorschläge**.
+  </Basement>
+</Slide>
+
+<Slide>
+  <h2>Was bedeutet das für uns?</h2>
+  <Basement>
+    Wir können die Probleme in natürlicher Sprache formulieren, und die KI
+    erzeugt uns Lösungen.
+  </Basement>
+  <Basement>
+    Wir müssen das Problem in kleinere Stücke unterteilen, damit es von der KI
+    gut gelöst werden kann.
+  </Basement>
+  <Basement>
+    Die KI kann das bearbeiten von Aufgaben erleichtern, das Lösen von komplexen
+    Problemen bleibt aber bei **uns**.
+  </Basement>
+</Slide>
+
+<Slide>
+  <h2>Beispiel: Pong</h2>
+  <Basement>
+    <Pong />
+
+  </Basement>
+</Slide>
+
+</Presentation>
+
+<VSpace space="2rem" />
+
+<section>
+
+Wir wissen nun also das wir die KI nutzen können und auch sollen, die Frage ist
+jetzt nur noch wie wir diesen Prozess möglichst einfach und effizient für uns
+machen.
+
+Am besten geht es wenn wir die KI direkt in unserem Editor nutzen können. Dafür
+gibt es eine praktische Extension in VS Code - **Codeium**. Um Codeium zu
+installieren können Sie einfach `CTRL + P` drücken und den folgenden Code
+eingeben:
+
+```text
+ext install Codeium.codeium
+```
+
+Sie müssen dann die Extension noch aktivieren und dabei einen Account bei
+Codeium erstellen. Wenn Sie damit fertig sind, bekommen Sie in Ihrem Editor
+direkt Vorschläge für Ihren Code.
+
+Denken Sie daran das es extrem wichtig ist der Experte für das Projekt zu
+bleiben. Sie sollten also nur Änderungen von der KI annehmen die Sie auch
+wirklich verstehen.
+
+</section>
+
+</Chapter>

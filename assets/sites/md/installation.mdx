@@ -1,0 +1,260 @@
+import Chapter from "../../components/Chapter"
+import Example from "../../components/Example"
+import Video from "../../components/Video"
+import { Tab, TabContainer, TabsButton } from "../../components/Tabs"
+
+<Chapter>
+
+## Installation
+
+<section>
+
+In der Informatik braucht es viele verschiedenen Werkzeuge um mit dem Computer
+und auch mit Code zu arbeiten. Diese Werkzeuge müssen zuerst installiert werden.
+Im folgenden Abschnitt finden Sie eine Installationsanleitung für Ihr
+Betriebssystem. Stellen Sie sicher dass Sie das richtige Betriebssystem
+ausgewählt haben, ansonsten können Sie die Installation garnicht durchführen.
+
+<TabContainer>
+  <ul className="tabs">
+    <TabsButton isActive={true} tabIndex="os-windows" label="Windows" />
+    <TabsButton tabIndex="os-mac" label="MacOS" />
+  </ul>
+  <Tab className="show" tabIndex="os-mac">
+    Wenn Sie einen Mac haben, können Sie viele der Programme am einfachsten über `homebrew` installieren. Dafür müssen Sie aber zuerst `homebrew` selber installieren. Das geht ganz einfach wenn Sie mit `cmd + Space` eine Suche öffnen, und nach dem Programm `Terminal` suchen. Dann einfach den folgenden Befehl hineinkopieren und auf `Enter` drücken. Mehr Informationen zu `homebrew` finden Sie [hier](), falls Sie diese brauchen.
+
+    ```bash
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
+
+    ### VSCode
+
+    Als erstes installieren wir VSCode. Das ist unser Editor den wir zum schreiben und editieren von Code verwenden werden. Um VSCode zu installieren, geben Sie den folgenden Befehl ein, und drücken Sie anschliessend auf `Enter`. Stellen Sie sicher das der Befehl richtig geschrieben ist, ansonsten wird es nicht funktionieren.
+
+    ```bash
+    brew install --cask visual-studio-code
+    ```
+
+    ### Git (Versionierungs-Werkzeug)
+
+    Wenn man Code schreibt, möchte man diesen immer in Versionen verwalten. Dafür gibt es das Werkzeug `git` dass Sie ganz einfach mit dem Befehl hier installieren können. Wir benötigen `git` auch um die Projektvorlagen zu bekommen und auch um diese abzugeben.
+
+    ```bash
+    brew install git
+    ```
+
+    ### Chrome (Webbrowser)
+
+    Wir werden sehr viel über die Webentwicklung lernen, daher brauchen wir einen Browser mit einem modernen Standart. Dafür können Sie `Chrome` verwenden, es gehen aber auch andere Browser wie Edge, Brave, Firefox etc. Getestet ist der ganze Code aber nur auf Browsern die auf der Chromium-Engine basieren. Das sollte aber keine Probleme machen. Chrome kann auch mit dem einfachen Befehl hier installiert werden.
+
+    ```bash
+    brew install --cask google-chrome
+    ```
+
+    {/* ### Node.js (Javascript Runtime)
+
+    Wir werden später viel mit Javascript programmieren, dafür werden wir dann `nodejs` brauchen. Wir brauchen `nodejs` aber bereits jetzt um verschiedene Teile des Projektes zum laufen zu bringen. `Nodejs` kann am besten mit dem folgenden Befehl installiert werden.
+
+    ```bash
+    brew install node
+    ```
+    */}
+
+    ### Docker-Desktop
+
+    `Docker` ist ein Werkzeug mit dem man Container erstellen und laufen lassen kann. Das hat den Vorteil dass wir auf verschiedenen Geräten die gleiche Umgebung in einem Container laufen lassen können, somit sollte nach der Installation von all diesen Werkzeugen bei allen alles funktionieren, zumindest wenn all diese Werkzeuge korrekt installiert wurden. `Docker` können Sie auch mit diesem Befehl installieren.
+
+    ```bash
+    brew install --cask docker
+    ```
+
+  </Tab>
+  <Tab className="hide" tabIndex="os-windows">
+    Am einfachsten geht die Installation auf Windows mit dem Kommandozeilen-Befehl `winget`. Dafür müssen Sie ein neues Terminal öffnen. Das machen Sie am besten als Administrator, damit die Installation auch sicher funktioniert.
+
+    öffnen Sie das Startmenu und suchen Sie nach `cmd`. Mit einem Rechtsklick auf das Programm, können Sie dann `Als Administrator öffnen` auswählen. Dann sollte ein neues Fenster aufgehen, wo Sie Befehle ausführen können.
+
+    Damit Sie `winget` sicher haben, und dieses auch auf der neusten Version ist, können Sie den folgenden Befehl laufen lassen.
+
+    ```bash
+    Add-AppxPackage -Path 'https://github.com/microsoft/winget-cli/releases/download/v1.8.1911/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle' -ForceApplicationShutdown
+    ```
+
+    ### VSCode
+
+    Als erstes installieren wir VSCode. Das ist unser Editor den wir zum schreiben und editieren von Code verwenden werden. Um VSCode zu installieren, geben Sie den folgenden Befehl ein, und drücken Sie anschliessend auf `Enter`. Stellen Sie sicher das der Befehl richtig geschrieben ist, ansonsten wird es nicht funktionieren.
+
+    ```bash
+    winget install -e --id Microsoft.VisualStudioCode
+    ```
+
+    ### Git (Versionierungs-Werkzeug)
+
+    Wenn man Code schreibt, möchte man diesen immer in Versionen verwalten. Dafür gibt es das Werkzeug `git` dass Sie ganz einfach mit dem Befehl hier installieren können. Wir benötigen `git` auch um die Projektvorlagen zu bekommen und auch um diese abzugeben.
+
+    ```bash
+    winget install -e --id Git.Git
+    ```
+
+    ### Chrome (Webbrowser)
+
+    Wir werden sehr viel über die Webentwicklung lernen, daher brauchen wir einen Browser mit einem modernen Standart. Dafür können Sie `Chrome` verwenden, es gehen aber auch andere Browser wie Edge, Brave, Firefox etc. Getestet ist der ganze Code aber nur auf Browsern die auf der Chromium-Engine basieren. Das sollte aber keine Probleme machen. Chrome kann auch mit dem einfachen Befehl hier installiert werden.
+
+    ```bash
+    winget install -e --id Google.Chrome
+    ```
+
+    {/* ### Node.js (Javascript Runtime)
+
+    Wir werden später viel mit Javascript programmieren, dafür werden wir dann `nodejs` brauchen. Wir brauchen `nodejs` aber bereits jetzt um verschiedene Teile des Projektes zum laufen zu bringen. `Nodejs` kann am besten mit dem folgenden Befehl installiert werden.
+
+    ```bash
+    winget install -e --id OpenJS.NodeJS
+    ```
+    */}
+
+    ### Docker-Desktop
+
+    `Docker` ist ein Werkzeug mit dem man Container erstellen und laufen lassen kann. Das hat den Vorteil dass wir auf verschiedenen Geräten die gleiche Umgebung in einem Container laufen lassen können, somit sollte nach der Installation von all diesen Werkzeugen bei allen alles funktionieren, zumindest wenn all diese Werkzeuge korrekt installiert wurden. `Docker` können Sie auch mit diesem Befehl installieren.
+
+    ```bash
+    winget install -e --id Docker.DockerDesktop
+    ```
+
+  </Tab>
+</TabContainer>
+
+</section>
+
+<Example title="Auftrag">
+
+Installieren Sie alle Programme die oben aufgezählt sind. Wenn Sie alles
+installiert haben, öffnen Sie `VSCode` und erstellen Sie ein neues Projekt um zu
+testen ob alles richtig installiert ist.
+
+Drücken Sie dafür `CTRL + SHIFT + P` und tippen Sie `clone`. Wählen Sie dann
+`Git: Clone` aus, und klonen Sie das folgende Repository zu Ihnen auf den
+Computer.
+
+```text
+https://github.com/gymmu/00-demo.git
+```
+
+</Example>
+
+## Demo Projekt
+
+<section>
+
+Wenn Sie das Projekt erfolgreich geklont haben, haben Sie alle Dateien, sowie
+den ganzen Versionsverlauf bei Ihnen auf dem Computer. Sie können im `Explorer`
+(ganz links bei `VSCode`) schauen welche Dateien verfügbar sind. Jedes Projekt /
+Repository sollte immer eine `README.md` Datei haben, die Sie durchlesen
+sollten. Da stehen alle Informationen die Sie zu dem Projekt brauchen. Bei
+unseren Projekten, stehen da auch gleich die Aufgaben. Diese Datei sollten Sie
+also immer gut durchlesen. Oftmals ist es besser diese Datei direkt auf `Github`
+anzuschauen, weil sie dort etwas schöner dargestellt wird. Dafür folgen Sie
+einfach diesem Link hier:
+[https://github.com/gymmu/00-demo.git](https://github.com/gymmu/00-demo.git) und
+scrollen ein wenig nach unten.
+
+</section>
+
+## Mit `VSCode` umgehen
+
+`VSCode` ist unser Editor und das wichtigste Werkzeug das wir hier in der
+Informatik verwenden werden. Sie werden mit der Zeit lernen immer besser damit
+umzugehen. Für einen einfachen Einstieg, schauen Sie sich das folgende Video an.
+Das Video ist noch aus dem letzten Jahr und der Inhalt hat sich leicht geändert,
+Sie können dennoch einige Dinge davon übernehmen.
+
+<Example title="Auftrag">
+  Schauen Sie sich das Video an, und versuchen Sie sich dann zu zweit in
+  `VSCode` zurechtzufinden. Bei Unklarheiten einfach Fragen.
+{/* Dieses Video erklärt wie das generelle Projektsetup funktioniert. Ist aber */}
+{/* veraltet, denn es arbeitet noch mit Live-Server, so wie wir es in 2023 */}
+{/* verwendet haben. */}
+<Video url="pZ9NPGK90YA" />
+
+</Example>
+
+## Webserver starten
+
+<section>
+
+Moderne Webseiten brauchen jeweils einen Webserver um zu funktionieren. Dafür
+verwenden wir `Docker` zusammen mit `nodejs`. Damit wir `Docker` direkt
+verwenden können, müssen wir eine **Erweiterung** in `VSCode` installieren.
+Drücken Sie dafür einfach `CTRL + P` und kopieren Sie den folgenden Text in das
+Feld und drücken Sie `Enter`.
+
+```text
+ext install ms-vscode-remote.remote-containers
+```
+
+Wenn die **Extension** erfolgreich installiert werden konnte, können Sie das
+Projekt in einem Container öffnen. Dafür klicken Sie `CTRL + SHIFT + P` und
+suchen nach dem Befehl `Reopen in Container`. Wenn Sie diesen Befehl ausführen,
+passieren ganz viele magische Dinge, und beim ersten Mal dauert das auch eine
+Weile. Wenn der ganze Prozess aber abgeschlossen ist, dann verwenden wir alle
+das genau gleiche Projekt-Setup und sollten dannach keine weiteren Probleme mehr
+haben.
+
+</section>
+
+<Example title="Auftrag: Mit dem Container kommunizieren">
+  Wenn Sie mit dem Container kommunizieren möchten, müssen Sie das über ein
+  Terminal machen. Das Terminal kann am Anfang ein wenig einschüchternd wirken,
+  es ist aber sehr einfach zu bedienen, und auch sehr mächtig. Sie müssen in der
+  Regel nur einfache Befehle eingeben, und wenn etwas nicht funktionieren
+  sollte, dann bekommen Sie eine ausführliche Fehlermeldung. Wenn Sie aber alles
+  richtig geschrieben haben, dann sollte auch alles ohne Probleme funktionieren.
+
+Um ein neues Terminal zu öffnen, tippen Sie `CTRL + SHIFT + P` und suchen Sie
+nach dem Befehl `Terminal: Create New Terminal`. Dann sollte am unteren Rand ein
+neues Terminal aufgehen. Dort können Sie den Befehl `npm run dev` eintippen und
+mit `Enter` bestätigen. Das erstellt Ihnen einen neuen Webserver.
+
+Wenn alles richtig funktioniert hat, können Sie über den folgenden Link Ihre
+eigene Webseite anzeigen lassen: [http://localhost:5173/](http://localhost:5173)
+
+</Example>
+
+## Webseite anpassen
+
+Bis jetzt haben Sie das Projekt einfach zum laufen gebracht, aber noch nichts
+von dem Inhalt geändert. Da es Ihr Projekt ist, soll die Webseite auch etwas
+über Sie aussagen. Suchen Sie also nach der Datei `index.html` und fügen Sie
+dort Ihren Namen ein. Speichern Sie dann mit `CTRL + S` und schauen Sie sich das
+Resultat im Webbrowser an.
+
+<Example title="Auftrag: Erste Version">
+  Herzlichen Glückwunsch! Mit dem Einfügen von Ihrem Namen, haben Sie die erste
+  eigene Version von Ihrem Projekt erstellt. Das möchten wir auch so als Version
+  festhalten und mithilfe von `git` einen sogenannten `commit` erstellen. Folgen
+  Sie dafür am besten diesem Video. Auch dieses Video ist aus dem letzten Jahr
+  und nicht mehr ganz aktuell auf das Projekt zugeschnitten. Es sollte aber
+  dennoch alles wesentliche enthalten.
+
+{/* Dieses Video erklärt wie man den Benutzer bei git angibt. */}
+
+<Video url="xRys4H_kTzI" />
+
+</Example>
+
+## Weitere Aufgaben
+
+Sie finden im `README.md` weitere Aufgaben die Sie beim erstellen einer Webseite
+anleiten.
+
+</Chapter>
+
+export function Component({children}) {
+  return (
+    <>
+      {children}
+    </>
+  )
+
+
+}
