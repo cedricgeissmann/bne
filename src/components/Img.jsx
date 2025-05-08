@@ -1,4 +1,9 @@
-export default function Img({ src, alt, imgStyle = {}, containerStyle = {} }) {
+export default function Img({
+  src,
+  alt,
+  imgStyle = { width: "100%" },
+  containerStyle = {},
+}) {
   return (
     <div
       style={{
