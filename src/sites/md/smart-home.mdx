@@ -11,6 +11,7 @@ import Presentation, {
   Fragment,
 } from "../../components/Reveal"
 import LazySVG from "../../components/LazySVG"
+import Math from "../../components/Katex"
 
 <Chapter>
 
@@ -41,13 +42,86 @@ werden, also ein Stromkreislauf muss geschlossen sein. Das öffnen und schliesse
 von einem Stromkreislauf, kann man mit einem herkömlichen Lichtschalter
 erreichen.
 
-</Example>
-
 <LazySVG
   src="./svg/circuit-diagram.svg"
   alt="Circuit Diagram"
   containerClassName="lazy-svg-container"
   svgStyle={{ width: "100%", height: "auto", cursor: "pointer" }}
 />
+
+Dank modernen Mikrocontrollern können wir ganz einfach den Schalter direkt in
+der Glühbirne verbauen und diesen über das Internet ansteuern. Dadurch ist es
+auch möglich aus dem warmen Bett das Licht an oder auszuschalten.
+
+</Example>
+
+<h2 id="anschluss-internet">Anschluss ans Internet</h2>
+
+Wir könnne uns einfach vorstellen das diese Microcontroller über Funkwellen
+angesteuert werden können. Zur Vereinfachung könnne wir uns auch vorstellen das
+es direkt das WLAN-Signal im eigenen Netzwerk sein soll. Somit ist es einfach
+vorstellbar das man mit einem Click auf einer Webseite, ein Signal an eine
+Glühbirne senden kann. Wie das aufrufen von einer Webseite. Im eigenen Netzwerk
+kann man sich das sehr einfach vorstellen, aber wie kann ich das nun von
+ausserhalb machen? Da kommt NAT ins Spiel.
+
+<LazySVG
+  src="./svg/nat-diagram.svg"
+  alt="NAT Diagram"
+  containerClassName="lazy-svg-container"
+  svgStyle={{ width: "100%", height: "auto", cursor: "pointer" }}
+/>
+
+Dank NAT (Network Address Translation) hat jedes Gerät im Heimnetz eine eigene
+IP-Adresse. Also jede Glühbirne und jedes andere _smarte_ Gerät, kann über das
+Netzwerk angesteuert werden, und auch Daten austauschen. Wenn man nun von aussen
+auf diese Geräte zugreifen möchte, kann man eine einfache Anfrage an die eigene
+öffentliche IP-Adresse schicken. Dort wird die Anfrage von einem Server
+verarbeitet, und dieser reicht die Anfrage dann über das interne Netz weiter.
+
+Der Zugriff auf so einen Server kann einfach verschlüsselt werden, und nur mit
+einem Schlüssel erlaubt werden, somit kommen nur registrierte Benutzer in das
+Heimnetzwerk.
+
+<Example classes="danger" id="security" title="Sicherheit">
+
+Das oben beschriebene Konzept ist in der Regel sicher, solange der Server auch
+sicher ist. Sicherheitslücken treten eigentlich immer dann auf, wenn Geräte von
+einem externen Abieter verwendet werden. Oftmals ist es so das Ihnen ein
+Anbieter eine _smarte_ Glühbirne verkauft, und dazu noch eine App. Das erscheint
+sehr praktisch, denn Sie installieren die Glühbirne, öffnen die App und alles
+klappt. Aber in diesem Fall, muss der Anbieter eine direkte Verbindung nach
+draussen haben, oder es wird ein Zusatzgerät in Ihrem Heimnetzwerk installiert,
+das eine direkte Verbindung nach aussen hat. Diese Zusatzgeräte sind oft ein
+Sicherheitsproblem, und da Sie mehrere davon brauchen (eines pro Anbieter) haben
+Sie auch viele Sicherheitslücken.
+
+</Example>
+
+<h2 id="savings">Sparrpotential</h2>
+
+Bei einem komplexeren Setup, mit Solarzellen auf dem Dach und vielen weiteren
+Geräten, können wir uns leicht vorstellen dass auch Energie eingesparrt werden
+kann. Zum Beispiel können wir die Heizung viel feiner kontrollieren wie es
+herkömmlich der Fall ist. Wir könnne die Temperatur auch so regeln lassen, dass
+es am Tag bei <Math>21^\circ</Math> ist, und <Math>19^\circ</Math> in der Nacht.
+Dadurch sollte auch der Schlaf verbessert werden können.
+
+Auch einfache Regeln sind vorstellbar. Wenn wir einen Server haben, können wir
+alle metriken auslesen, und auch das Wetter online überprüfen. Lesen wir zum
+Beispiel das gerade viel Strom produziert wird mit den Solarzellen, und wir
+sehen das Wetter bleibt gut für die nächsten paar Stunden, dann können wir
+beispielweise den Geschirrspüler automatisch anschalten.
+
+<div className="hint">
+
+Ob mit allen Automatisierungen tatsächlich mehr energie gesparrt wird, wie
+manuell und mit sehr Energiesparenden Geräten ist sehr schwer zu beantworten.
+Das hängt sehr stark von der Situation ab und natürlich wie viel Strom das der
+Server braucht. Moderne Server brauchen nur extrem wenig Strom, aber dennoch
+müsste man es in jedem Fall zuerst messen, um zu sehen ob Energie gesparrt
+werden kann.
+
+</div>
 
 </Chapter>
