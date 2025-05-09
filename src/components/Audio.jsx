@@ -1,14 +1,12 @@
-import React from 'react';
+import React from "react"
 
-export default function AudioPlayer({ src }) {
+export default function AudioPlayer({ style, src }) {
   return (
-    <div>
+    <div style={{ ...style }}>
       <audio controls>
         <source src={src} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
     </div>
-  );
+  )
 }
-
-
