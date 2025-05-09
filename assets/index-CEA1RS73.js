@@ -1,0 +1,3 @@
+import{j as i}from"./index-53EEUyki.js";import{C as r}from"./Chapter-eClysD64.js";function t(e){const n={h2:"h2",p:"p",...e.components};return i.jsxs(r,{children:[i.jsx(n.h2,{children:"BNE"}),i.jsx(n.p,{children:`Hier sind die Unterlagen zu digitaler Nachhaltigkeit und Heimautomatisierung zu
+finden.`}),i.jsx(n.p,{children:`Wenn Sie keine Navigationsleiste auf der Seite sehen, klicken Sie auf das
+Hamburger-Menu oder auf den Titel. Klicken Sie auch dort um es zu schliessen.`})]})}function o(e={}){const{wrapper:n}=e.components||{};return n?i.jsx(n,{...e,children:i.jsx(t,{...e})}):t(e)}export{o as default};
