@@ -38,6 +38,19 @@ import Math from "../../components/Katex"
       Eine Lampe hat ein Leuchtmittel, das elektrische Energie in Licht
       umwandelt.
     </Basement>
+    <Basement>
+      <LazySVG
+        src="./svg/circuit-diagram.svg"
+        alt="Circuit Diagram"
+        containerClassName="lazy-svg-container"
+        svgStyle={{
+          backgroundColor: "#efefef",
+          width: "100%",
+          height: "auto",
+          cursor: "pointer",
+        }}
+      />
+    </Basement>
     <Basement className="fragment">
       Ein geschlossener Stromkreislauf ist notwendig, gesteuert durch einen
       Lichtschalter.
@@ -55,12 +68,20 @@ import Math from "../../components/Katex"
       Signale können per Klick auf Webseiten gesendet werden.
     </Basement>
     <Basement className="fragment">
-      Zugriff von außerhalb erfolgt über NAT (Network Address Translation).
+      Zugriff von ausserhalb erfolgt über NAT (Network Address Translation).
     </Basement>
   </Slide>
   <Slide>
     <h3>Sicherheit</h3>
     <Basement>Jedes Gerät im Heimnetz hat eine eigene IP-Adresse.</Basement>
+    <Basement>
+      <LazySVG
+        src="./svg/nat-diagram.svg"
+        alt="NAT Diagram"
+        containerClassName="lazy-svg-container"
+        svgStyle={{ width: "100%", height: "auto", cursor: "pointer" }}
+      />
+    </Basement>
     <Basement className="fragment">
       Zugriff wird verschlüsselt und nur mit Schlüssel erlaubt.
     </Basement>
@@ -159,8 +180,8 @@ einem externen Anbieter verwendet werden. Oftmals ist es so, dass Ihnen ein
 Anbieter eine _smarte_ Glühbirne verkauft und dazu noch eine App. Das erscheint
 sehr praktisch, denn Sie installieren die Glühbirne, öffnen die App und alles
 klappt. Aber in diesem Fall muss der Anbieter eine direkte Verbindung nach
-draußen haben, oder es wird ein Zusatzgerät in Ihrem Heimnetzwerk installiert,
-das eine direkte Verbindung nach außen hat. Diese Zusatzgeräte sind oft ein
+draussen haben, oder es wird ein Zusatzgerät in Ihrem Heimnetzwerk installiert,
+das eine direkte Verbindung nach aussen hat. Diese Zusatzgeräte sind oft ein
 Sicherheitsproblem, und da Sie mehrere davon brauchen (eines pro Anbieter),
 haben Sie auch viele Sicherheitslücken.
 
