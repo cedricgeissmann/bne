@@ -1,1 +1,0 @@
-import{j as t}from"./index-B2qCcbtg.js";function l({src:e,alt:s,imgStyle:n={},containerStyle:i={}}){return t.jsx("div",{style:{display:"flex",justifyContent:"center",alignItems:"center",...i},children:t.jsx("img",{style:{...n},src:e,alt:s})})}export{l as I};

@@ -1,1 +1,0 @@
-import{j as e}from"./index-B2qCcbtg.js";function o({url:r}){return e.jsx("center",{children:e.jsx("iframe",{width:"560",height:"315",src:`https://www.youtube.com/embed/${r}`,title:"YouTube video player",frameborder:"0",allow:"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",allowfullscreen:!0})})}export{o as V};

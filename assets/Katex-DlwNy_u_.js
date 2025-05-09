@@ -1,1 +1,0 @@
-import{r as e,j as s}from"./index-B2qCcbtg.js";import{k as o}from"./hexy-CgJrN9Xi.js";function f({children:t}){const r=e.useRef(null);return e.useEffect(()=>{o.render(t,r.current,{throwOnError:!1})},[r]),s.jsx("span",{ref:r,children:t})}export{f as M};
