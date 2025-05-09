@@ -4,9 +4,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  fg-color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,6 +12,20 @@
 
   --header-height: 60px;
   --footer-height: 60px;
+
+  /* Color variables */
+  --color-bg-primary: #242424;
+  --color-text-primary: rgba(255, 255, 255, 0.87);
+  --color-text-secondary: rgba(255, 255, 255, 0.502);
+  --color-btn-bg: cornflowerblue;
+  --color-btn-bg-hover: rgb(83, 123, 199);
+  --color-hint-bg: rgba(196, 86, 66, 0.685);
+  --color-hint-border: red;
+  --color-white: white;
+  --color-table-border: #d3d3d3;
+  --color-table-row-alt-bg: #2a2a2a;
+  --color-table-header-bg: rgb(61, 61, 61);
+  --color-table-row-bg: #1e1e1e;
 }
 
 /* Add scroll-margin-top to headings to offset fixed header */
@@ -51,7 +62,7 @@ header {
   justify-content: flex-start;
   position: sticky;
   inset: 0;
-  background-color: #242424;
+  background-color: var(--color-bg-primary);
 }
 
 footer {
@@ -60,7 +71,7 @@ footer {
   font-size: 0.8rem;
   margin-top: 20px;
   padding: 10px;
-  border-top: 0.5px solid rgba(255, 255, 255, 0.502);
+  border-top: 0.5px solid var(--color-text-secondary);
 }
 
 #root {
@@ -93,7 +104,7 @@ h1 {
 
 ol.nav a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--color-text-primary);
   padding: 5px 0;
 }
 
@@ -104,7 +115,7 @@ ol.nav li:hover > a {
 ol.nav > li {
   font-weight: bold;
   font-size: 1.2rem;
-  border-bottom: 0.5px solid rgba(255, 255, 255, 0.502);
+  border-bottom: 0.5px solid var(--color-text-secondary);
   margin-bottom: 15px;
   padding-bottom: 15px;
 }
@@ -121,15 +132,15 @@ ol.nav {
 }
 
 .btn {
-  background-color: cornflowerblue;
-  color: white;
+  background-color: var(--color-btn-bg);
+  color: var(--color-white);
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
 }
 
 .btn:hover {
-  background-color: rgb(83, 123, 199);
+  background-color: var(--color-btn-bg-hover);
 }
 
 .btn-container {
@@ -149,10 +160,10 @@ ol.nav {
   margin: 0.5rem auto;
   font-size: 0.9rem;
   font-family: monospace;
-  background-color: rgba(196, 86, 66, 0.685);
+  background-color: var(--color-hint-bg);
   padding: 0.75rem;
   border-radius: 0.5rem;
-  border: 2px solid red;
+  border: 2px solid var(--color-hint-border);
 }
 
 .huge {
@@ -166,12 +177,12 @@ ol.nav {
 
 .icon svg {
   width: 100%;
-  stroke: white;
+  stroke: var(--color-white);
 }
 
 aside.sidenav {
   grid-area: navbar;
-  border-right: 1px solid rgba(255, 255, 255, 0.87);
+  border-right: 1px solid var(--color-text-primary);
   height: calc(100vh - var(--header-height));
   position: sticky;
   align-self: start;
@@ -206,17 +217,17 @@ section ol {
     height: 1.5rem;
     line-height: 1.5rem;
     border-radius: 50%;
-    background-color: #242424;
-    color: white;
+    background-color: var(--color-bg-primary);
+    color: var(--color-white);
     text-align: center;
     font-weight: bold; /* Fettgedruckte Nummerierung */
-    border: 2px solid white;
+    border: 2px solid var(--color-white);
   }
 }
 
 .pw-table {
   width: 100%;
-  border: 2px solid #d3d3d3; /* Hellgrauer Rand */
+  border: 2px solid var(--color-table-border); /* Hellgrauer Rand */
   border-collapse: collapse; /* Keine Ränder zwischen den Zellen */
 }
 
@@ -227,12 +238,14 @@ section ol {
 }
 
 .pw-table tr:nth-child(even) {
-  background-color: #2a2a2a; /* Leicht helleres Grau für jede zweite Zeile */
+  background-color: var(
+    --color-table-row-alt-bg
+  ); /* Leicht helleres Grau für jede zweite Zeile */
 }
 
 .rainbow-table {
   width: 100%;
-  border: 2px solid #d3d3d3; /* Hellgrauer Rand */
+  border: 2px solid var(--color-table-border); /* Hellgrauer Rand */
   border-radius: 0.5rem; /* Abgerundete Ecken */
   border-collapse: collapse; /* Keine Ränder zwischen den Zellen */
 }
@@ -241,7 +254,7 @@ section ol {
   text-align: center; /* Zentrierter Text */
   font-weight: bold; /* Fettgedruckter Text */
   padding: 0.5rem; /* Mehr Padding */
-  background-color: rgb(61, 61, 61); /* Heller Hintergrund */
+  background-color: var(--color-table-header-bg); /* Heller Hintergrund */
 }
 
 .rainbow-table td {
@@ -250,7 +263,9 @@ section ol {
 }
 
 .rainbow-table tr:nth-child(2n-1) {
-  background-color: #1e1e1e; /* Leicht dunklerer Hintergrund für jede zweite Zeile */
+  background-color: var(
+    --color-table-row-bg
+  ); /* Leicht dunklerer Hintergrund für jede zweite Zeile */
 }
 
 @media (max-width: 840px) {
