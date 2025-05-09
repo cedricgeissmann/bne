@@ -26,7 +26,7 @@
      showgrid="false"
      inkscape:zoom="2.5171429"
      inkscape:cx="175"
-     inkscape:cy="74.886493"
+     inkscape:cy="74.886491"
      inkscape:window-width="1876"
      inkscape:window-height="1122"
      inkscape:window-x="0"
@@ -52,14 +52,6 @@
      stroke-width="3"
      id="line2" />
   <!-- Switch before opening -->
-  <line
-     x1="140.45682"
-     y1="74.543182"
-     x2="196.09256"
-     y2="59.826855"
-     stroke="#000000"
-     stroke-width="3"
-     id="line3" />
   <!-- Opening in circuit -->
   <!-- Gap between 180 and 200 on y=75 -->
   <!-- Circuit line right -->
@@ -72,46 +64,49 @@
      stroke-width="3"
      id="line5" />
   <!-- Light bulb moved right -->
-  <circle
-     cx="250"
-     cy="75"
-     r="25"
-     fill="yellow"
-     stroke="black"
-     stroke-width="3"
-     id="circle5" />
-  <line
-     x1="250"
-     y1="50"
-     x2="250"
-     y2="100"
-     stroke="black"
-     stroke-width="2"
-     id="line6" />
-  <line
-     x1="235"
-     y1="75"
-     x2="265"
-     y2="75"
-     stroke="black"
-     stroke-width="2"
-     id="line7" />
-  <line
-     x1="240"
-     y1="60"
-     x2="260"
-     y2="90"
-     stroke="black"
-     stroke-width="2"
-     id="line8" />
-  <line
-     x1="260"
-     y1="60"
-     x2="240"
-     y2="90"
-     stroke="black"
-     stroke-width="2"
-     id="line9" />
+  <g
+     id="g2">
+    <circle
+       cx="250"
+       cy="75"
+       r="25"
+       fill="yellow"
+       stroke="black"
+       stroke-width="3"
+       id="circle5" />
+    <line
+       x1="250"
+       y1="50"
+       x2="250"
+       y2="100"
+       stroke="black"
+       stroke-width="2"
+       id="line6" />
+    <line
+       x1="235"
+       y1="75"
+       x2="265"
+       y2="75"
+       stroke="black"
+       stroke-width="2"
+       id="line7" />
+    <line
+       x1="240"
+       y1="60"
+       x2="260"
+       y2="90"
+       stroke="black"
+       stroke-width="2"
+       id="line8" />
+    <line
+       x1="260"
+       y1="60"
+       x2="240"
+       y2="90"
+       stroke="black"
+       stroke-width="2"
+       id="line9" />
+  </g>
   <!-- Negative terminal vertical line and minus sign on right -->
   <line
      x1="320"
@@ -168,13 +163,31 @@
      cy="74.88649"
      rx="5.6306415"
      ry="5.2333655" />
-  <ellipse
-     style="fill:#010000;fill-opacity:1;stroke:#000000;stroke-width:1.65652;stroke-linejoin:round;stroke-opacity:1"
-     id="ellipse12"
-     cx="140.63565"
-     cy="74.88649"
-     rx="5.8168793"
-     ry="5.2209659" />
+  <g
+     id="g1">
+    <rect
+       style="fill:#010000;stroke:#000000;stroke-width:1.372;stroke-linejoin:round;fill-opacity:0;stroke-opacity:0"
+       id="rect1"
+       width="62.769581"
+       height="44.494892"
+       x="138.64926"
+       y="51.645855" />
+    <line
+       x1="140.51747"
+       y1="74.326958"
+       x2="202.7856"
+       y2="57.26215"
+       stroke="#000000"
+       stroke-width="3.41765"
+       id="line3" />
+    <ellipse
+       style="fill:#010000;fill-opacity:1;stroke:#000000;stroke-width:1.65652;stroke-linejoin:round;stroke-opacity:1"
+       id="ellipse12"
+       cx="140.63565"
+       cy="74.88649"
+       rx="5.8168793"
+       ry="5.2209659" />
+  </g>
   <circle
      style="fill:#010000;fill-opacity:1;stroke:#000000;stroke-width:1.58076;stroke-linejoin:round;stroke-opacity:1"
      id="ellipse13"
