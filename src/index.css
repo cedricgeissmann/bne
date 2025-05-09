@@ -155,6 +155,10 @@ ol.nav {
   border: 2px solid red;
 }
 
+.huge {
+  font-size: 1.5rem;
+}
+
 .icon {
   display: block;
   width: 30px;
