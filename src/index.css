@@ -3,7 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  color-scheme: dark;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,18 +14,18 @@
   --footer-height: 60px;
 
   /* Color variables */
-  --color-bg-primary: #1e3a25;
-  --color-text-primary: rgba(255, 255, 255, 0.87);
-  --color-text-secondary: rgba(255, 255, 255, 0.502);
-  --color-btn-bg: cornflowerblue;
-  --color-btn-bg-hover: rgb(83, 123, 199);
-  --color-hint-bg: rgba(196, 86, 66, 0.685);
-  --color-hint-border: red;
-  --color-white: white;
-  --color-table-border: #d3d3d3;
-  --color-table-row-alt-bg: #2a2a2a;
-  --color-table-header-bg: rgb(61, 61, 61);
-  --color-table-row-bg: #1e1e1e;
+  --color-bg-primary: #121212;
+  --color-text-primary: rgba(255, 255, 255, 0.9);
+  --color-text-secondary: rgba(255, 255, 255, 0.6);
+  --color-btn-bg: #3a6ea5;
+  --color-btn-bg-hover: #2a5491;
+  --color-hint-bg: rgba(255, 69, 0, 0.3);
+  --color-hint-border: #ff4500;
+  --color-white: #ffffff;
+  --color-table-border: #444444;
+  --color-table-row-alt-bg: #1a1a1a;
+  --color-table-header-bg: #222222;
+  --color-table-row-bg: #121212;
 }
 
 /* Add scroll-margin-top to headings to offset fixed header */
@@ -52,8 +52,9 @@ body {
   margin: 0;
   width: 100%;
   text-align: justify;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
 }
-
 header {
   grid-area: header;
   display: flex;
