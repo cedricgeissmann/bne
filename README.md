@@ -1,5 +1,3 @@
-# Informatik fürs Gymnasium
+# BNE Micro Teaching
 
-Dieses Repository ist eine Zusammenstellung des Unterrichtmaterials für den
-Informatikunterricht am Gymnasium. Das Material wird den SuS als Webseite zur
-Verfügung gestellt.
+Unterlagen für das Wahlmodul BNE.
