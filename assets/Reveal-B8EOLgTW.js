@@ -1,4 +1,4 @@
-var Ut=Object.defineProperty;var Vt=(u,e,t)=>e in u?Ut(u,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):u[e]=t;var Lt=(u,e,t)=>Vt(u,typeof e!="symbol"?e+"":e,t);import{j as se,r as Ct}from"./index-CBkBSlhU.js";function mi({children:u,title:e="Beispiel",classes:t="",id:i=""}){return se.jsxs("div",{className:`highlight ${t}`,children:[se.jsx("h3",{id:i,children:`${e}`}),u]})}/*!
+var Ut=Object.defineProperty;var Vt=(u,e,t)=>e in u?Ut(u,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):u[e]=t;var Lt=(u,e,t)=>Vt(u,typeof e!="symbol"?e+"":e,t);import{j as se,r as Ct}from"./index-BdeaoHCm.js";function mi({children:u,title:e="Beispiel",classes:t="",id:i=""}){return se.jsxs("div",{className:`highlight ${t}`,children:[se.jsx("h3",{id:i,children:`${e}`}),u]})}/*!
 * reveal.js 5.1.0
 * https://revealjs.com
 * MIT licensed
