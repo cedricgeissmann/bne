@@ -24,9 +24,9 @@ const infoBoxStyle = {
   fontFamily: "Arial, sans-serif",
 }
 
-export default function AudioSummary({ src }) {
+export default function AudioSummary({ id, src }) {
   return (
-    <div style={containerStyle}>
+    <div id={id} style={containerStyle}>
       <div style={infoBoxStyle}>
         Dies ist eine Zusammenfassung des Artikels, erstellt von einer KI. Die
         Korrektheit der Inhalte kann nicht garantiert werden.
