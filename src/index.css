@@ -26,6 +26,44 @@
   --color-table-row-alt-bg: #1a1a1a;
   --color-table-header-bg: #222222;
   --color-table-row-bg: #121212;
+
+  /* Gruvbox dark theme colors */
+  --color-gruvbox-dark0-hard: #1d2021;
+  --color-gruvbox-dark0: #282828;
+  --color-gruvbox-dark0-soft: #32302f;
+  --color-gruvbox-dark1: #3c3836;
+  --color-gruvbox-dark2: #504945;
+  --color-gruvbox-dark3: #665c54;
+  --color-gruvbox-dark4: #7c6f64;
+  --color-gruvbox-gray: #928374;
+  --color-gruvbox-light0-hard: #f9f5d7;
+  --color-gruvbox-light0: #fbf1c7;
+  --color-gruvbox-light0-soft: #f2e5bc;
+  --color-gruvbox-light1: #ebdbb2;
+  --color-gruvbox-light2: #d5c4a1;
+  --color-gruvbox-light3: #bdae93;
+  --color-gruvbox-light4: #a89984;
+  --color-gruvbox-bright-red: #fb4934;
+  --color-gruvbox-bright-green: #b8bb26;
+  --color-gruvbox-bright-yellow: #fabd2f;
+  --color-gruvbox-bright-blue: #83a598;
+  --color-gruvbox-bright-purple: #d3869b;
+  --color-gruvbox-bright-aqua: #8ec07c;
+  --color-gruvbox-bright-orange: #fe8019;
+  --color-gruvbox-neutral-red: #cc241d;
+  --color-gruvbox-neutral-green: #98971a;
+  --color-gruvbox-neutral-yellow: #d79921;
+  --color-gruvbox-neutral-blue: #458588;
+  --color-gruvbox-neutral-purple: #b16286;
+  --color-gruvbox-neutral-aqua: #689d6a;
+  --color-gruvbox-neutral-orange: #d65d0e;
+  --color-gruvbox-faded-red: #9d0006;
+  --color-gruvbox-faded-green: #79740e;
+  --color-gruvbox-faded-yellow: #b57614;
+  --color-gruvbox-faded-blue: #076678;
+  --color-gruvbox-faded-purple: #8f3f71;
+  --color-gruvbox-faded-aqua: #427b58;
+  --color-gruvbox-faded-orange: #af3a03;
 }
 
 /* Add scroll-margin-top to headings to offset fixed header */
@@ -52,7 +90,7 @@ body {
   margin: 0;
   width: 100%;
   text-align: justify;
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-gruvbox-dark0);
   color: var(--color-text-primary);
 }
 header {
@@ -63,7 +101,7 @@ header {
   justify-content: flex-start;
   position: sticky;
   inset: 0;
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-gruvbox-dark0-hard);
 }
 
 footer {
@@ -78,12 +116,12 @@ footer {
 #root {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
-    "header header"
-    "navbar main"
-    "navbar footer";
+    "header"
+    "main"
+    "footer";
 }
 
 h1 a {
@@ -105,20 +143,21 @@ h1 {
 
 ol.nav a {
   text-decoration: none;
-  color: var(--color-text-primary);
-  padding: 5px 0;
+  color: var(--color-gruvbox-bright-aqua);
+  padding: 8px 0;
 }
 
 ol.nav li:hover > a {
   text-decoration: underline;
+  color: var(--color-gruvbox-bright-orange);
 }
 
 ol.nav > li {
   font-weight: bold;
   font-size: 1.2rem;
-  border-bottom: 0.5px solid var(--color-text-secondary);
-  margin-bottom: 15px;
-  padding-bottom: 15px;
+  border-bottom: 1px solid var(--color-gruvbox-faded-blue);
+  margin-bottom: 25px;
+  padding-bottom: 20px;
 }
 
 ol.nav * {
@@ -133,7 +172,7 @@ ol.nav {
 }
 
 .btn {
-  background-color: var(--color-btn-bg);
+  background-color: var(--color-gruvbox-bright-blue);
   color: var(--color-white);
   text-decoration: none;
   padding: 10px;
@@ -141,7 +180,7 @@ ol.nav {
 }
 
 .btn:hover {
-  background-color: var(--color-btn-bg-hover);
+  background-color: var(--color-gruvbox-bright-purple);
 }
 
 .btn-container {
@@ -149,7 +188,8 @@ ol.nav {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .right::before {
@@ -161,10 +201,15 @@ ol.nav {
   margin: 0.5rem auto;
   font-size: 0.9rem;
   font-family: monospace;
-  background-color: var(--color-hint-bg);
+  background-color: rgba(
+    254,
+    128,
+    25,
+    0.3
+  ); /* --color-gruvbox-bright-orange with alpha */
   padding: 0.75rem;
   border-radius: 0.5rem;
-  border: 2px solid var(--color-hint-border);
+  border: 2px solid var(--color-gruvbox-bright-orange);
 }
 
 .huge {
@@ -196,6 +241,7 @@ main {
   grid-area: main;
   width: 100%;
   overflow-x: hidden;
+  padding: 20px 0px;
 }
 
 section ol {
@@ -228,7 +274,7 @@ section ol {
 
 .pw-table {
   width: 100%;
-  border: 2px solid var(--color-table-border); /* Hellgrauer Rand */
+  border: 2px solid var(--color-gruvbox-gray); /* Gruvbox gray border */
   border-collapse: collapse; /* Keine Ränder zwischen den Zellen */
 }
 
@@ -240,13 +286,13 @@ section ol {
 
 .pw-table tr:nth-child(even) {
   background-color: var(
-    --color-table-row-alt-bg
-  ); /* Leicht helleres Grau für jede zweite Zeile */
+    --color-gruvbox-dark1
+  ); /* Gruvbox dark1 for alternate row background */
 }
 
 .rainbow-table {
   width: 100%;
-  border: 2px solid var(--color-table-border); /* Hellgrauer Rand */
+  border: 2px solid var(--color-gruvbox-gray); /* Gruvbox gray border */
   border-radius: 0.5rem; /* Abgerundete Ecken */
   border-collapse: collapse; /* Keine Ränder zwischen den Zellen */
 }
@@ -255,7 +301,7 @@ section ol {
   text-align: center; /* Zentrierter Text */
   font-weight: bold; /* Fettgedruckter Text */
   padding: 0.5rem; /* Mehr Padding */
-  background-color: var(--color-table-header-bg); /* Heller Hintergrund */
+  background-color: var(--color-gruvbox-dark2); /* Gruvbox dark2 background */
 }
 
 .rainbow-table td {
@@ -265,8 +311,8 @@ section ol {
 
 .rainbow-table tr:nth-child(2n-1) {
   background-color: var(
-    --color-table-row-bg
-  ); /* Leicht dunklerer Hintergrund für jede zweite Zeile */
+    --color-gruvbox-dark0
+  ); /* Gruvbox dark0 background for odd rows */
 }
 
 @media (max-width: 840px) {
